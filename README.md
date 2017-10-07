@@ -1,39 +1,36 @@
-# TRABALHO 01
-Trabalho desenvolvido durante a disciplina de BD
+# PickFantasy
 
 # Sumário
 
 ### 1.COMPONENTES<br>
-Integrantes do grupo <br>
 Ezequiel F. Mapel: ezequiel.f.mapel@gmail.com<br>
 Pedro Henrique T. dos Santos: pedroso.hts@gmail.com<br>
 
 ### 2.INTRODUÇÃO E MOTIVAÇAO<br>
-## INTRODUÇÃO -
-&emps; &emps; &emps; **PickFantasy** é um jogo de esporte fantasia, no qual ações da
+### INTRODUÇÃO -
+&emsp; &emsp; **PickFantasy** é um jogo de esporte fantasia, no qual ações da
 vida real influência nos resultados. Um bom exemplo é o CartolaFC. Porém, os resultados
-são baseados em jogos de E-Sports(esportes eletrônicos).
+são baseados em jogos de E-Sports(esportes eletrônicos), como por exemplo, <a href="http://br.leagueoflegends.com/pt/" target="_blank">League of Legends</a> ou <a href="https://www.faceit.com/pt/csgo" target="_blank">Counter-Strike GO</a>.
 <br>
-## MOTIVAÇAO -
-&emps; &emps; &emps; A categoria E-Sports vem crescendo no mercado brasileiro e no mundo. Em 2016 no EUA, a categoria arrecadou cerca de R$1,5 bilhões é esperado para 2017 a quantia de cerca de R$ 2,15 bilhões e em 2020, essa quantia pode chegar a R$ 4,3 bilhões. É um fato que o E-Sports, está em um crescimento exponencial e por isso quisemos focar nosso trabalho nesse mundo e algo que o envolve, pode ter uma grande probabilidade de ser bem aceito.
+### MOTIVAÇAO -
+&emsp; &emsp; A categoria E-Sports vem crescendo no mercado brasileiro e no mundo. Em 2016 no EUA, a categoria arrecadou cerca de R$ 1,5 bilhões é esperado para 2017 a quantia de cerca de R$ 2,15 bilhões e em 2020, essa quantia pode chegar a R$ 4,3 bilhões. É um fato que o E-Sports, está em um crescimento exponencial e por isso quisemos focar nosso trabalho nesse mundo e algo que o envolve, pode ter uma grande probabilidade de ser bem aceito.
 
 ### 3.MINI-MUNDO<br>
 Escreve ae <br>
 
 ### 4.RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
 
-![Alt text](https://github.com/trabpickf/Trabalho01/tree/master/imagens/mockup.png?raw=true "Pagina 1 Mockup")
+<img src="https://raw.githubusercontent.com/trabpickf/Trabalho01/master/imagens/mockup.png"/>
 
 ![Clique aqui!](https://github.com/trabpickf/Trabalho01/tree/master/arquivos/PickEmFantasy.pdf?raw=true "Modelo completo") Para visualizar o modelo completo.
 
 #### 4.1 TABELA DE DADOS DO SISTEMA:
-    ![Clique aqui](https://github.com/trabpickf/Trabalho01/tree/master/arquivos/tabela.ods?raw=true "Tabela CALC") caso queira acessar a tabela.
+   ![Clique aqui!](https://github.com/trabpickf/Trabalho01/tree/master/arquivos/tabela.ods?raw=true "Tabela CALC") Caso queira acessar a tabela.
     
-    
-
+   
 ### 5.MODELO CONCEITUAL<br>
 
-![Alt text](https://github.com/trabpickf/Trabalho01/tree/master/imagens/ModeloConceitual.png?raw=true "Modelo Conceitual")
+![Alt text](https://raw.githubusercontent.com/trabpickf/Trabalho01/master/imagens/ModeloConceitual.png?raw=true "Modelo Conceitual")
     
     b) NOTACAO UML (Caso esteja fazendo a disciplina de analise)
 
@@ -41,40 +38,24 @@ Escreve ae <br>
     [Grupo01]: [Nomes dos que participaram na avaliação]
     [Grupo02]: [Nomes dos que participaram na avaliação]
 
-#### 5.2 DECISÕES DE PROJETO
-    [atributo]: [descrição da decisão]
-    
-    EXEMPLO:
-    a) Campo endereço: em nosso projeto optamos por um campo multivalorado e composto, pois a empresa 
-    pode possuir para cada departamento mais de uma localização... 
-    b) justifique!
-
 #### 5.3 DESCRIÇÃO DOS DADOS 
-    ![Clique aqui!](https://github.com/trabpickf/Trabalho01/tree/master/arquivos/Descricao_Dados.docx?raw=true "Script INSERT") Para acessar a descrição dos dados.
+   ![Clique aqui!](https://github.com/trabpickf/Trabalho01/blob/master/arquivos/descricao_dados?raw=true "Descrição dos dados") Para acessar a descrição dos dados.
 
 <hr>
 
 ### 6	MODELO LÓGICO<br>
-![Alt text](https://github.com/trabpickf/Trabalho01/tree/master/imagens/ModeloLogico.png?raw=true "Modelo Logico")
+![Alt text](https://raw.githubusercontent.com/trabpickf/Trabalho01/master/imagens/ModeloLogico.png?raw=true "Modelo Logico")
 ### 7	MODELO FÍSICO<br>    
 ![Clique aqui!](https://github.com/trabpickf/Trabalho01/tree/master/arquivos/modelo_fisico.sql?raw=true "Modelo Físico") Para acessar o script do modelo físico.
  
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
 ![Clique aqui!](https://github.com/trabpickf/Trabalho01/tree/master/arquivos/script_insert.sql?raw=true "Script INSERT") Para acessar o script do INSERT.
 
-#### 8.1 DETALHAMENTO DAS INFORMAÇÕES
-        Detalhamento sobre as informações e processo de obtenção ou geração dos dados.
-        Referenciar todas as fontes referentes a :
-        a) obtenção dos dados
-        b) obtenção de códigos reutilizados
-        c) fontes de estudo para desenvolvimento do projeto
-
-## Entrega até este ponto em (20/09/2017)
         
 #### 8.2 INCLUSÃO DO SCRIPT PARA CRIAÇÃO DE TABELA E INSERÇÃO DOS DADOS<br>
-		![Clique aqui!](https://github.com/trabpickf/Trabalho01/tree/master/arquivos/modelo_fisico.sql?raw=true "Modelo Logico") Para acessar o script do modelo físico. <br>
+![Clique aqui!](https://github.com/trabpickf/Trabalho01/tree/master/arquivos/modelo_fisico.sql?raw=true "Modelo Logico") Para acessar o script do modelo físico. <br>
 		
-		![Clique aqui!](https://github.com/trabpickf/Trabalho01/tree/master/arquivos/script_insert.sql?raw=true "Script INSERT") Para acessar o script do INSERT.
+![Clique aqui!](https://github.com/trabpickf/Trabalho01/tree/master/arquivos/script_insert.sql?raw=true "Script INSERT") Para acessar o script do INSERT.
 		
 		
 

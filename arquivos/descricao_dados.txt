@@ -1,0 +1,53 @@
+DESCRIÇÃO DOS DADOS -
+
+USUARIO:
+	- Armazena informações relativa ao usuário -
+	user_name - Armazena o nome de usuário.
+	nome - Armazena o nome do utilitário.
+	email - Campo no qual armazena o email de contado.
+	senha - Responsável por armazenar a senha do usuário.
+
+PARTIDA:
+	- Armazena informações sobre a partida -
+	time1 - Nome do time que irá participar da partida.
+	time2 - Time que estára contra o time1.
+	placar - Resultado da partida.
+	ganhador - Vencedor entre time1 x time2.
+
+PONTUACAO:
+	- Armazena as pontuações do usuário -
+	pontos_temporada - Total de pontos feito na temporada, desde a fase de grupos a final.
+	pontos_global - Total de pontos feito em todas as temporadas jogadas.
+
+TEMPORADA_RANKING:
+	- Colocação dos usuários -
+	nome_temporada - Nome/Edição da temporada.
+	usuario - Identificar a colocação do usuário.
+	pontos - Sua pontuação global.
+	colocacao - Localização que identifica a posição do usuário relativa ao ranking.
+EQUIPE:
+	- Guarda dados sobre cada time -
+	nome_equipe - Armazena o nome do time.
+	nacionalidade - Armazena a nacionalidade do time.
+
+JOGADOR:
+	- Armazena informações sobre o pro-player -
+	nome_jogador: Nome do pro-player.
+	apelido: Nickname do pró-player no jogo(LOL, CSGO).
+	nacionalidade: Nacionalidade do jogador.
+
+CAMPEONATO:
+	- Guarda dados relativo ao campeonato -
+	nome_campeonato - Nome do campeonato.
+	tipo_campeonato - Gênero do campeonato.
+ETAPA:
+	- Guarda informações dá etapa do campeonato -
+	nome - Tipo da etapa. Exemplo: Fase de grupos ou final.
+
+ESCOLHA:
+	- Informações da escolha do usuário -
+	melhor_time - Melhor time escolhido.
+	pior_time - Pior time escolhido.
+	melhor_jogador - Melhor jogador escolhido.
+	pior_jogador - Pior jogador escolhido.
+	
