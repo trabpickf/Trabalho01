@@ -30,7 +30,7 @@ Escreve ae <br>
    
 ### 5.MODELO CONCEITUAL<br>
 
-![Alt text](https://raw.githubusercontent.com/trabpickf/Trabalho01/master/imagens/ModeloConceitual.png?raw=true "Modelo Conceitual")
+![Alt text](https://raw.githubusercontent.com/trabpickf/Trabalho01/master/imagens/ModeloConceitual.png "Modelo Conceitual")
     
     b) NOTACAO UML (Caso esteja fazendo a disciplina de analise)
 
@@ -39,23 +39,23 @@ Escreve ae <br>
     [Grupo02]: [Nomes dos que participaram na avaliação]
 
 #### 5.3 DESCRIÇÃO DOS DADOS 
-   ![Clique aqui!](https://github.com/trabpickf/Trabalho01/blob/master/arquivos/descricao_dados?raw=true "Descrição dos dados") Para acessar a descrição dos dados.
+   ![Clique aqui!](https://github.com/trabpickf/Trabalho01/blob/master/arquivos/descricao_dados.txt "Descrição dos dados") Para acessar a descrição dos dados.
 
 <hr>
 
 ### 6	MODELO LÓGICO<br>
-![Alt text](https://raw.githubusercontent.com/trabpickf/Trabalho01/master/imagens/ModeloLogico.png?raw=true "Modelo Logico")
+![Alt text](https://raw.githubusercontent.com/trabpickf/Trabalho01/master/imagens/ModeloLogico.png "Modelo Logico")
 ### 7	MODELO FÍSICO<br>    
-![Clique aqui!](https://github.com/trabpickf/Trabalho01/tree/master/arquivos/modelo_fisico.sql?raw=true "Modelo Físico") Para acessar o script do modelo físico.
+![Clique aqui!](https://github.com/trabpickf/Trabalho01/tree/master/arquivos/modelo_fisico.sql "Modelo Físico") Para acessar o script do modelo físico.
  
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
-![Clique aqui!](https://github.com/trabpickf/Trabalho01/tree/master/arquivos/script_insert.sql?raw=true "Script INSERT") Para acessar o script do INSERT.
+![Clique aqui!](https://github.com/trabpickf/Trabalho01/tree/master/arquivos/script_insert.sql "Script INSERT") Para acessar o script do INSERT.
 
         
 #### 8.2 INCLUSÃO DO SCRIPT PARA CRIAÇÃO DE TABELA E INSERÇÃO DOS DADOS<br>
-![Clique aqui!](https://github.com/trabpickf/Trabalho01/tree/master/arquivos/modelo_fisico.sql?raw=true "Modelo Logico") Para acessar o script do modelo físico. <br>
+![Clique aqui!](https://github.com/trabpickf/Trabalho01/tree/master/arquivos/modelo_fisico.sql "Modelo Logico") Para acessar o script do modelo físico. <br>
 		
-![Clique aqui!](https://github.com/trabpickf/Trabalho01/tree/master/arquivos/script_insert.sql?raw=true "Script INSERT") Para acessar o script do INSERT.
+![Clique aqui!](https://github.com/trabpickf/Trabalho01/tree/master/arquivos/script_insert.sql "Script INSERT") Para acessar o script do INSERT.
 		
 		
 
