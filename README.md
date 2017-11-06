@@ -32,7 +32,7 @@ E por fim, a última tela da página inicial é a de partidas, onde o usuário e
    
 ### 5.MODELO CONCEITUAL<br>
 
-![Alt text](https://raw.githubusercontent.com/trabpickf/Trabalho01/master/imagens/ModeloConceitual%20Update%20-%20PF.png "Modelo Conceitual")
+![Alt text](https://raw.githubusercontent.com/trabpickf/Trabalho01/master/imagens/ModeloConceitual%20-%20ATUALIZADO.png "Modelo Conceitual")
     
     b) NOTACAO UML (Caso esteja fazendo a disciplina de analise)
 
@@ -46,7 +46,7 @@ E por fim, a última tela da página inicial é a de partidas, onde o usuário e
 <hr>
 
 ### 6	MODELO LÓGICO<br>
-![Alt text](https://raw.githubusercontent.com/trabpickf/Trabalho01/master/imagens/ModeloLogico%20Update%20-%20PF.png "Modelo Logico")
+![Alt text](https://raw.githubusercontent.com/trabpickf/Trabalho01/master/imagens/ModeloLogico%20-%20ATUALIZADO.png "Modelo Logico")
 ### 7	MODELO FÍSICO<br>    
 ![Clique aqui!](https://github.com/trabpickf/Trabalho01/tree/master/arquivos/modelo_fisico.sql "Modelo Físico") Para acessar o script do modelo físico.
  
