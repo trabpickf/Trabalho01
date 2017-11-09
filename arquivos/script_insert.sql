@@ -1,4 +1,4 @@
-USE pickfantasy_dtb;
+use pickf;
 
 
 INSERT INTO USUARIO(user_id, user_name, nome, email, senha, pontos)
