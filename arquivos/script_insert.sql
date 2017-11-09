@@ -1,75 +1,48 @@
 USE pickfantasy_dtb;
 
 
-INSERT INTO USUARIO(user_name, nome_usuario, email, senha)
-VALUES 	('rodolfinho', 'Rodolfo', 'rodolfo@gmail.com', '*****'),
-	('nichol', 'Nicholas', 'nichol@gmail.com', '********'),
-	('rogertt', 'Roger', 'rogerfo@gmail.com', '*********'),
-	('dinho', 'Denis', 'dendinho@gmail.com', '****'),
-	('beterraba', 'José', 'beterrabajose@gmail.com', '**********');
+INSERT INTO USUARIO(user_id, user_name, nome, email, senha, pontos)
+VALUES 	(1, 'rodolfinho', 'Rodolfo', 'rodolfo@gmail.com', '*****', 150),
+	(2, 'nichol', 'Nicholas', 'nichol@gmail.com', '********',300),
+	(3, 'rogertt', 'Roger', 'rogerfo@gmail.com', '*********',540),
+	(4, 'dinho', 'Denis', 'dendinho@gmail.com', '****',100),
+	(5, 'beterraba', 'José', 'beterrabajose@gmail.com', '**********',250);
     
-
-INSERT INTO CAMPEONATO(nome_campeonato)
-VALUES 	('CBLOl 2017'),
-	('ESL PRO LEAGUE 2017');
-
-INSERT INTO PARTIDA(time1,time2,placar,ganhador)
-VALUES	('Red Cannids', 'Keyd Stars','3x2','Red Cannids'), /* CBLOL */
-	('Keyd Stars', 'g3nerationX', '4x1', 'Keyd Stars'), /* CSGO */
-	('Team oNe', 'CNB', '3x2', 'CNB'), /* CSGO */
-	('INTZ', 'AlienTech', '3x0', 'INTZ'), /* CSGO */
-	('PaiN Gaming', 'Kabum', '3x2','PaiN Gaming');
+INSERT INTO CAMPEONATOS(id_campeonato,nome)
+VALUES 	(1,'CBLOl 2017'),
+	(2,'ESL PRO LEAGUE 2017');
     
-
-INSERT INTO EQUIPE(nome_equipe, nacionalidade_equipe)
-VALUES 	('Keyd Stars', 'Norte-Americana'), /* Possui time no Brasil */
-	('PaiN Gaming', 'Brasileira'),
-	('Team oNe', 'Brasileira'),
-	('INTZ', 'Brasileira'),
-	('Kabum','Norte-Americana'),
-	('AlienTech','Norte-Americana'),
-	('CNB', 'Brasileira'),
-	('Red Cannids','Brasileira'),
-	('g3nerationX','Brasileira');
-
-INSERT INTO JOGADOR(nome_jogador,apelido,nacionalidade)
-VALUES	('Roberto da Siva', 'Polenta', 'Brasileira'),
-	('Juan Souza','JunZ','Brasileira'),
-	('Denis Voté','Dent','Francesa'),
-	('Nikole','Koler','Brasileira'),
-	('Oswald','Andrade','Brasileira'),
-	('Mateus','Manossos','Alemã'),
-	('Marcos Henrique','mFlechas','Brasileira'),
-	('Felipe Gonçalves','BrTT','Brasileira'),
-	('Gabriel','20Mata70Correr','Brasileira');
-
-/*
-INSERT INTO ESCOLHE_USUARIO_ETAPA_JOGADOR(melhor_time, pior_time, melhor_jogador, pior_jogador)
-VALUES	('Keyd Stars','CNB','BrTT','mFlechas'),
-	('Red Cannids','Keyd Stars','Koler','Andrade'),
-	('g3nerationX','INTZ','Manossos','20Mata70Correr'),
-	('Team oNe','CNB','JunZ','20Mata70Correr'),
-	('INTZ','g3nerationX','20Mata70Correr','Dent');
-*/
-
-INSERT INTO TEMPORADA_RANKING(nome_temporada, usuario, pontos, data_inicio, data_fim)
-VALUES 	('CBLOL 2017','nichol',145, '2017-06-3','2017-07-5'),
-	('ESL PRO LEAGUE 2017','dinho', 320, '2017-02-10','2017-03-15'),
-	('CBLOL 2017','beterraba',190, '2017-06-3','2017-07-5'),
-	('ESL PRO LEAGUE 2017','rodolfinho',380 ,'2017-02-10','2017-03-15'),
-	('ESL PRO LEAGUE 2017','rogertt',350 ,'2017-02-10','2017-03-15');
-
-INSERT INTO ETAPA(nome_etapaq)
-VALUES 	('Grupos'),
-	('Mata-Mata'),
-	('Pré Temporada'),
-	('Final');
-
-INSERT INTO PONTUACAO(pontos_temporada, pontos_global)
-VALUES 	(100, 145),
-	(190, 320),
-	(120, 190),
-	(250, 380),
-	(260, 350);
+INSERT INTO TIME(id_time,nome, nacionalidade)
+VALUES 	(1,'Keyd Stars', 'Norte-Americana'),
+	(2,'PaiN Gaming', 'Brasileira'),
+	(3,'Team oNe', 'Brasileira'),
+	(4,'INTZ', 'Brasileira'),
+	(5,'Kabum','Norte-Americana'),
+	(6,'AlienTech','Norte-Americana'),
+	(7,'CNB', 'Brasileira'),
+	(8,'Red Cannids','Brasileira'),
+	(9,'g3nerationX','Brasileira');
     
+INSERT INTO JOGADOR(id_jogador,nome,apelido,nacionalidade,FK_TIME_id_time)
+VALUES	(1,'Roberto da Siva', 'Polenta', 'Brasileira',4),
+	(2,'Juan Souza','JunZ','Brasileira',4),
+	(3,'Denis Voté','Dent','Francesa',4),
+	(4,'Nikole','Koler','Brasileira',4),
+	(5,'Oswald','Andrade','Brasileira',4),
+	(6,'Mateus','Manossos','Alemã',3),
+	(7,'Marcos Henrique','mFlechas','Brasileira',3),
+	(8,'Felipe Gonçalves','BrTT','Brasileira',3),
+	(9,'Gabriel','20Mata70Correr','Brasileira',3);
     
+INSERT INTO RANKING_TEMPORADA(id_temporada, data_inicio, data_fim)
+VALUES 	(1, '2017/06/01', '2017/06/30'), (2, '2017/07/01', '2017/07/31');
+
+INSERT INTO PARTIDA(id_partida,placar,ganhador,data,FK_CAMPEONATOS_id_campeonato, FK_TIME_id_time2,FK_TIME_id_time)
+VALUES	(1,'3x2',2,'2017/05/18', 1, 8, 1),
+	(2, '4x1', 1,'2017/07/11', null,1, 9),
+	(3, '3x2', 7,'2017/07/13', null, 3, 7),
+	(4, '3x0', 4,'2017/08/18', null, 4, 6),
+	(5, '3x2',2,'2017/09/18', 1, 2, 5);
+    
+INSERT into APOSTA_USUARIO_PARTIDA_TIME(FK_USUARIO_user_id,FK_PARTIDA_id_partida,FK_TIME_id_time)
+VALUES(1,5,5);
