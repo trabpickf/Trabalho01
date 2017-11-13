@@ -34,13 +34,7 @@ E por fim, a última tela da página inicial é a de partidas, onde o usuário e
 
 ![Alt text](https://raw.githubusercontent.com/trabpickf/Trabalho01/master/imagens/ModeloConceitual%20-%20(TESTE).png "Modelo Conceitual")
 
-    b) NOTACAO UML (Caso esteja fazendo a disciplina de analise)
-
-#### 5.1 Validação do Modelo Conceitual
-    [Grupo01]: [Nomes dos que participaram na avaliação]
-    [Grupo02]: [Nomes dos que participaram na avaliação]
-
-#### 5.3 DESCRIÇÃO DOS DADOS
+#### 5.1 DESCRIÇÃO DOS DADOS
    ![Clique aqui!](https://github.com/trabpickf/Trabalho01/blob/master/arquivos/descricao_dados.txt "Descrição dos dados") Para acessar a descrição dos dados.
 
 <hr>
@@ -65,7 +59,8 @@ E por fim, a última tela da página inicial é a de partidas, onde o usuário e
 
 
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
-OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
+![Clique aqui! - ](https://github.com/trabpickf/Trabalho01/blob/master/arquivos/tabelas_consultas.sql "Script") Para acessar o script dos comandos abaixo.<br>
+
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
 <img src="https://raw.githubusercontent.com/trabpickf/Trabalho01/master/imagens/Consultas/9.1.png" width="1300" height="650" title="Print Todas Tabelas"/><br>
 
@@ -92,10 +87,11 @@ OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mos
 
 ### 9.9 CONSULTAS COM SELF JOIN (todas) E VIEW (mais importantes)<br>
 ### 9.10 SUBCONSULTAS (Mínimo 3) <br>
+
+    Entrega 13/11
+
 ### 10	ATUALIZAÇÃO DA DOCUMENTAÇÃO DOS SLIDES<br>
 ### 11	DIFICULDADES ENCONTRADAS PELO GRUPO<br>
-
-        Entrega até este ponto em (data a ser definida)
 
 ### 12  FORMATACAO NO GIT: https://help.github.com/articles/basic-writing-and-formatting-syntax/
 
