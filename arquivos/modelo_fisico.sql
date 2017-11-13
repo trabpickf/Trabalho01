@@ -1,3 +1,7 @@
+DROP DATABASE IF EXISTS pickfantasy;
+CREATE DATABASE pickfantasy;
+USE pickfantasy;
+
 CREATE TABLE USUARIO (
     user_id int PRIMARY KEY,
     user_name varchar(20),
@@ -139,3 +143,8 @@ ALTER TABLE ALCANCOU ADD CONSTRAINT FK_ALCANCOU_0
 ALTER TABLE ALCANCOU ADD CONSTRAINT FK_ALCANCOU_1
     FOREIGN KEY (FK_RANKING_TEMPORADA_id_temporada)
     REFERENCES RANKING_TEMPORADA (id_temporada);
+    
+
+ALTER TABLE pickfantasy.time ADD COLUMN (
+Campeonato varchar (40)
+);

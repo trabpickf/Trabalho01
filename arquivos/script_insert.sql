@@ -1,4 +1,4 @@
-use pickf;
+USE pickfantasy;
 
 
 INSERT INTO USUARIO(user_id, user_name, nome, email, senha, pontos)
@@ -45,4 +45,10 @@ VALUES	(1,'3x2',2,'2017/05/18', 1, 8, 1),
 	(5, '3x2',2,'2017/09/18', 1, 2, 5);
     
 INSERT into APOSTA_USUARIO_PARTIDA_TIME(FK_USUARIO_user_id,FK_PARTIDA_id_partida,FK_TIME_id_time)
-VALUES(1,5,5);
+VALUES
+(1,5,5),
+(2,2,2),
+(3,4,4)
+;
+
+
