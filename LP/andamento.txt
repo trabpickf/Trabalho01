@@ -1,0 +1,3 @@
+Validação dos campos de cadastro;
+Criptografia dos campos necessários;
+Verificação de usuário já existente;

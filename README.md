@@ -49,9 +49,7 @@ E por fim, a última tela da página inicial é a de partidas, onde o usuário e
 
 
 #### 8.2 INCLUSÃO DO SCRIPT PARA CRIAÇÃO DE TABELA E INSERÇÃO DOS DADOS<br>
-![Clique aqui!](https://github.com/trabpickf/Trabalho01/tree/master/arquivos/modelo_fisico.sql "Modelo Logico") Para acessar o script do modelo físico. <br>
-
-![Clique aqui!](https://github.com/trabpickf/Trabalho01/tree/master/arquivos/script_insert.sql "Script INSERT") Para acessar o script do INSERT.
+![Clique aqui!](https://github.com/trabpickf/Trabalho01/tree/master/arquivos/scripts_fisico_insert.sql "Modelo Logico") Para acessar o script. <br>
 
 
 
