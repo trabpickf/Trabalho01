@@ -2,52 +2,59 @@ DESCRIÇÃO DOS DADOS -
 
 USUARIO:
 	- Armazena informações relativa ao usuário -
+	user_id - Identificador unico do usuário.
 	user_name - Armazena o nome de usuário.
 	nome - Armazena o nome do utilitário.
 	email - Campo no qual armazena o email de contado.
 	senha - Responsável por armazenar a senha do usuário.
+	pontos - Armazena todos os pontos acumulados pelo usuário.
 
 PARTIDA:
 	- Armazena informações sobre a partida -
-	time1 - Nome do time que irá participar da partida.
-	time2 - Time que estára contra o time1.
+	id_partida - Identificador unico da partida.
 	placar - Resultado da partida.
 	ganhador - Vencedor entre time1 x time2.
+	data - Informa o dia em que a partida ocorrerá/ocorreu.
 
-PONTUACAO:
-	- Armazena as pontuações do usuário -
-	pontos_temporada - Total de pontos feito na temporada, desde a fase de grupos a final.
-	pontos_global - Total de pontos feito em todas as temporadas jogadas.
 
-TEMPORADA_RANKING:
-	- Colocação dos usuários -
-	nome_temporada - Nome/Edição da temporada.
-	usuario - Identificar a colocação do usuário.
-	pontos - Sua pontuação global.
-	colocacao - Localização que identifica a posição do usuário relativa ao ranking.
-EQUIPE:
+RANKING_TEMPORADA:
+	- Armazena informações de controle sobre a temporada -
+	id_temporada - Identificador unico da temporada.
+	data_fim - Armazena a data de encerramento de cada temporada.
+	data_inicio - Armazena a data inicial de cada temporada.
+TIME:
 	- Guarda dados sobre cada time -
-	nome_equipe - Armazena o nome do time.
+	id_time - Identificador unico do Time.
+	nome - Armazena o nome do time.
 	nacionalidade - Armazena a nacionalidade do time.
 
 JOGADOR:
 	- Armazena informações sobre o pro-player -
-	nome_jogador: Nome do pro-player.
-	apelido: Nickname do pró-player no jogo(LOL, CSGO).
+	id_jogador - Identificador unico do jogador.
+	nome - Nome do pro-player(jogador).
+	apelido: Armazena e Informa o Nickname utilizado pelo jogador no seu respectivo game.
 	nacionalidade: Nacionalidade do jogador.
 
 CAMPEONATO:
 	- Guarda dados relativo ao campeonato -
-	nome_campeonato - Nome do campeonato.
-	tipo_campeonato - Gênero do campeonato.
+	nome - Nome do campeonato.
+	id_campeonato - Identificador unico do campeonato.
 ETAPA:
 	- Guarda informações dá etapa do campeonato -
+	id_etapa - Identificador unico da etapa.
 	nome - Tipo da etapa. Exemplo: Fase de grupos ou final.
 
-ESCOLHA:
+ESCOLHE:
 	- Informações da escolha do usuário -
-	melhor_time - Melhor time escolhido.
-	pior_time - Pior time escolhido.
-	melhor_jogador - Melhor jogador escolhido.
-	pior_jogador - Pior jogador escolhido.
+	id_escolha - Identificador unico da escolha feita pelo usuario.
+	melhor_time - Time escolhido que, na opinião do usuário, se destacará na etapa determinada.
+	pior_time - Time escolhido que, na opinião do usuário, irá ser eliminado na etapa determinada.
+	melhor_jogador - Jogador escolhido que, na opinião do usuário, se destacará na etapa determinada. 
+	pior_jogador - Jogador escolhido que, na opinião do usuário, terá um desempenho ruim na etapa determinada.
+
+APOSTA:
+	- Informações sobre a aposta do usuário -
+	id_aposta - Identificador unico da aposta do usuário.
+	acerto - Booleano que compara o time em que o usuário apostou
+		com o ganhador da partida em que o usuário apostou.
 	
