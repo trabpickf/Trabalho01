@@ -60,7 +60,7 @@ E por fim, a última tela da página inicial é a de partidas, onde o usuário e
 ![Clique aqui! - ](https://github.com/trabpickf/Trabalho01/blob/master/arquivos/tabelas_consultas.sql "Script") Para acessar o script dos comandos abaixo.<br>
 
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
-<img src="https://raw.githubusercontent.com/trabpickf/Trabalho01/master/imagens/Consultas/9.1.png" width="1300" height="650" title="Print Todas Tabelas"/><br>
+SELECT * FROM usuario;<img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/tabela%20usuario.PNG" /><br>
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 3) <br>
 <img src="https://raw.githubusercontent.com/trabpickf/Trabalho01/master/imagens/Consultas/9.2.png" /><br>
