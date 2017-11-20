@@ -1,18 +1,16 @@
 USE pickfantasy;
 
 # 9.1 -  
-SELECT * FROM aposta_usuario_partida_time;
-SELECT * FROM campeonatos;
-SELECT * FROM jogador;
+SELECT * FROM usuario;
 SELECT * FROM partida;
-SELECT * FROM ranking_temporada;
-SELECT * FROM pickfantasy.time;
-SELECT * FROM pickfantasy.usuario;
+SELECT * FROM campeonatos;
+SELECT * FROM time;
 SELECT * FROM etapa;
-
-SELECT * FROM alcancou; # EM BRANCOS
-SELECT * FROM escolhe_usuario_etapa_jogador_time;
-SELECT * FROM etapa_campeonato;
+SELECT * FROM jogador;
+SELECT * FROM ranking_temporada;
+SELECT * FROM ESCOLHE_E_C_ESCOLHE_USUARIO_TIME_JOGADOR;
+SELECT * FROM aposta_usuario_partida_time;
+SELECT * FROM alcancou;
 
 
 
@@ -32,6 +30,7 @@ SELECT nome, pontos FROM usuario WHERE pontos/2 > 100;
 # 9.4
 SELECT nome FROM jogador WHERE nome LIKE "m%";
 SELECT nome FROM jogador WHERE nome LIKE "F_lipe %";
+SELECT nome FROM time WHERE nome LIKE "K%"
 
 # 9.5
 
@@ -60,14 +59,16 @@ ON partida.FK_TIME_id_time= time.id_time;
 SELECT * FROM aposta_usuario_partida_time INNER JOIN usuario
 ON FK_USUARIO_user_id = user_id ORDER BY user_name;
 
-SELECT * FROM pickfantasy.jogador INNER JOIN pickfantasy.time ON 
+SELECT * FROM jogador INNER JOIN time ON 
 pickfantasy.time.id_time = pickfantasy.jogador.FK_TIME_id_time;
 
 # 9.7
 
-SELECT * FROM pickfantasy.etapa GROUP BY etapa.nome;
-SELECT * FROM pickfantasy.etapa GROUP BY etapa.id_etapa DESC;
+SELECT * FROM etapa GROUP BY etapa.nome;
+SELECT * FROM etapa GROUP BY etapa.id_etapa DESC;
 SELECT * FROM aposta_usuario_partida_time GROUP BY aposta_usuario_partida_time.FK_PARTIDA_id_partida;
+select * from usuario group by nome;
+select * from time group by nacionalidade;
 
 # 9.8
 
