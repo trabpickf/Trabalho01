@@ -34,21 +34,13 @@ SELECT nome FROM time WHERE nome LIKE "K%"
 
 # 9.5
 
-UPDATE pickfantasy.time SET nacionalidade="Brasileira"	WHERE id_time = 7;
-UPDATE pickfantasy.time SET Campeonato = "LOL" WHERE id_time = 2;
-UPDATE pickfantasy.time SET Campeonato = "LOL" WHERE id_time = 4;
-UPDATE pickfantasy.time SET Campeonato = "LOL" WHERE id_time = 5;
-UPDATE pickfantasy.time SET Campeonato = "LOL" WHERE id_time = 7;
-UPDATE pickfantasy.time SET Campeonato = "LOL" WHERE id_time = 8;
-UPDATE pickfantasy.time SET Campeonato = "CS" WHERE id_time = 3;
-UPDATE pickfantasy.time SET Campeonato = "CS" WHERE id_time = 5;
-UPDATE pickfantasy.time SET Campeonato = "CS" WHERE id_time = 6;
-UPDATE pickfantasy.time SET Campeonato = "CS" WHERE id_time = 9;
+UPDATE time SET nacionalidade="Brasileira"	WHERE id_time = 7;
+UPDATE time SET Campeonato = "LOL" WHERE id_time = 4;
+UPDATE usuario SET pontos = 0 WHERE user_id < 2;
 
-#Error Code: 1175. You are using safe update mode and you tried to update a table without a WHERE that uses a KEY column 
-#To disable safe mode, toggle the option in Preferences -> SQL Editor and reconnect.
-# ERRO/AVISO ao tentar DELETAR
-DELETE FROM	 usuario  WHERE pontos<2;
+delete from APOSTA_USUARIO_PARTIDA_TIME WHERE FK_USUARIO_user_id = 2;
+delete from ranking_temporada WHERE id_temporada < 2;
+delete from time WHERE nacionalidade <> 'Brasileira';
 
 
 # 9.6
