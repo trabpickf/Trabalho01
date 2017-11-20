@@ -38,7 +38,7 @@ INSERT INTO RANKING_TEMPORADA(id_temporada, data_inicio, data_fim)
 VALUES 	(1, '2017/06/01', '2017/06/30'), (2, '2017/07/01', '2017/07/31');
 
 INSERT INTO PARTIDA(id_partida,placar,ganhador,data,FK_CAMPEONATOS_id_campeonato, FK_TIME_id_time2,FK_TIME_id_time)
-VALUES	(1,'3x2',2,'2017/05/18', 1, 8, 1),
+VALUES	(1,'3x2',1,'2017/05/18', 1, 8, 1),
 	(2, '4x1', 1,'2017/07/11', null,1, 9),
 	(3, '3x2', 7,'2017/07/13', null, 3, 7),
 	(4, '3x0', 4,'2017/08/18', null, 4, 6),
