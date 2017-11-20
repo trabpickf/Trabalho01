@@ -45,10 +45,21 @@ VALUES	(1,'3x2',2,'2017/05/18', 1, 8, 1),
 	(5, '3x2',2,'2017/09/18', 1, 2, 5);
     
 INSERT into APOSTA_USUARIO_PARTIDA_TIME(FK_USUARIO_user_id,FK_PARTIDA_id_partida,FK_TIME_id_time)
-VALUES
-(1,5,5),
-(2,2,2),
-(3,4,4)
-;
+VALUES(1,5,5);
+
+insert into etapa (id_etapa,nome)
+values(1,'Fase de Grupos'),(2,'Oitavas de Final'),(3,'Quartas de Final'),
+	(4,'Semi Final'),(5,'Final');
+    
+    
+insert into ESCOLHE_E_C_ESCOLHE_USUARIO_TIME_JOGADOR (id_escolha, FK_USUARIO_user_id,
+			FK_TIME_id_time ,FK_TIME_id_pior_time, FK_JOGADOR_id_jogador, FK_JOGADOR_id_pior_jogador)
+values (1,2,2,7,8,2),(2,4,8,1,8,4);
+
+insert into ETAPA_CAMPEONATO_ETAPA_CAMPEONATOS_ESCOLHE_E_C (FK_ETAPA_id_etapa ,FK_CAMPEONATOS_id_campeonato,
+			FK_ESCOLHE_E_C_ESCOLHE_USUARIO_TIME_JOGADOR_id_escolha)
+values (3,1,1),(1,2,2);
 
 
+insert into alcancou (FK_USUARIO_user_id ,FK_RANKING_TEMPORADA_id_temporada)
+values(1,2),(2,2),(3,2),(4,2),(5,2);
