@@ -60,7 +60,17 @@ E por fim, a última tela da página inicial é a de partidas, onde o usuário e
 ![Clique aqui! - ](https://github.com/trabpickf/Trabalho01/blob/master/arquivos/tabelas_consultas.sql "Script") Para acessar o script dos comandos abaixo.<br>
 
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
-SELECT * FROM usuario;<img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/tabela%20usuario.PNG" /><br>
+SELECT * FROM usuario;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/tabela%20usuario.PNG" /><br>
+SELECT * FROM partida;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/tabela%20partida.PNG" /><br>
+SELECT * FROM campeonatos;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/tabela%20campeonato.PNG" /><br>
+SELECT * FROM time;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/tabela%20time.PNG" /><br>
+SELECT * FROM etapa;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/tabela%20etapa.PNG" /><br>
+SELECT * FROM jogador;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/tabela%20jogador.PNG" /><br>
+SELECT * FROM ranking_temporada;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/tabela%20ranking_temporada.PNG" /><br>
+SELECT * FROM ESCOLHE_E_C_ESCOLHE_USUARIO_TIME_JOGADOR;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/tabela%20escolha_usuario_time_jogador.PNG" /><br>
+SELECT * FROM aposta_usuario_partida_time;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/tabela%20usuario_partida.PNG" /><br>
+SELECT * FROM alcancou;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/tabela%20alcançou.PNG" /><br>
+
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 3) <br>
 <img src="https://raw.githubusercontent.com/trabpickf/Trabalho01/master/imagens/Consultas/9.2.png" /><br>
