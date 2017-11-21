@@ -32,7 +32,7 @@ E por fim, a última tela da página inicial é a de partidas, onde o usuário e
 
 ### 5.MODELO CONCEITUAL<br>
 
-![Alt text](https://raw.githubusercontent.com/trabpickf/Trabalho01/master/imagens/ModeloConceitual%20-%20(TESTE).png "Modelo Conceitual")
+![Alt text](https://github.com/trabpickf/Trabalho01/blob/master/imagens/Modelo%20Conceitual%20-%20Final.png "Modelo Conceitual")
 
 #### 5.1 DESCRIÇÃO DOS DADOS
    ![Clique aqui!](https://github.com/trabpickf/Trabalho01/blob/master/arquivos/descricao_dados.txt "Descrição dos dados") Para acessar a descrição dos dados.
@@ -40,7 +40,7 @@ E por fim, a última tela da página inicial é a de partidas, onde o usuário e
 <hr>
 
 ### 6	MODELO LÓGICO<br>
-![Alt text](https://raw.githubusercontent.com/trabpickf/Trabalho01/master/imagens/ModeloLogico%20-%20(TESTE).png "Modelo Logico")
+![Alt text](https://github.com/trabpickf/Trabalho01/blob/master/imagens/Modelo%20Logico%20-%20Final.png "Modelo Logico")
 ### 7	MODELO FÍSICO<br>    
 ![Clique aqui!](https://github.com/trabpickf/Trabalho01/tree/master/arquivos/modelo_fisico.sql "Modelo Físico") Para acessar o script do modelo físico.
 
