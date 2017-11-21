@@ -90,7 +90,20 @@ SELECT nome FROM time WHERE nome LIKE "K%";<br>
 <img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.4%203.PNG" /><br>
 
 #### 9.5	ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
-<img src="https://raw.githubusercontent.com/trabpickf/Trabalho01/master/imagens/Consultas/9.5.png" /><br>
+UPDATE time SET nacionalidade='Brasileira'	WHERE id_time = 5;<br>
+select * from time;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/update%201.1.PNG" /><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/update%201.2.PNG" /><br><br>
+UPDATE partida SET placar = '2x0' WHERE id_partida = 2;<br>
+select * from partida;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/update%202.1.PNG" /><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/update%202.2.PNG" /><br><br>
+UPDATE usuario SET pontos = 0 WHERE user_id < 2;<br>
+select * from usuario;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/update%203.1.PNG" /><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/update%203.2.PNG" /><br><br>
+
+delete from APOSTA_USUARIO_PARTIDA_TIME WHERE FK_USUARIO_user_id = 2;<br>
+select * from APOSTA_USUARIO_PARTIDA_TIME;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/delete%201.1.PNG" /><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/delete%201.2.PNG" /><br><br>
+delete from ranking_temporada WHERE id_temporada < 2;<br>
+select * from ranking_temporada;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/delete%202.1.PNG" /><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/delete%202.2.PNG" /><br><br>
+delete from alcancou WHERE FK_USUARIO_user_id = 2;
+select * from alcancou;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/delete%203.1.PNG" /><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/delete%203.2.PNG" /><br>
+
 
 #### 9.6	CONSULTAS COM JUNÇÃO (Todas Junções)<br>
 SELECT * FROM partida INNER JOIN time
