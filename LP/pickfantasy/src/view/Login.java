@@ -2,6 +2,7 @@ package view;
 
 
 import java.awt.Color;
+import java.awt.Point;
 import javax.swing.JOptionPane;
 import model.dao.UsuarioDAO;
 
@@ -23,18 +24,22 @@ public class Login extends javax.swing.JFrame {
      */
     
     private Cadastro cadastro = null;
+    private EsqueceuSenha esqueceuSenha = null;
     
     Color colorAzul = new Color(0,0,148);
     Color colorPreto = new Color(0,0,0);
     
+    public void setLogin(boolean visivel){
+        btnES.setVisible(visivel);
+        btnNC.setVisible(visivel);
+        btnEntrar.setVisible(visivel);
+        panelImg.setVisible(visivel);
+        txtUser.setVisible(visivel);
+        txtPass.setVisible(visivel);
+    }
     public void checkInvisible(){
         if(cadastro.isVisible()==false){
-            btnES.setVisible(true);
-            btnNC.setVisible(true);
-            btnEntrar.setVisible(true);
-            panelImg.setVisible(true);
-            txtUser.setVisible(true);
-            txtPass.setVisible(true);
+            setLogin(true);
         }
     }
     public Login() {
@@ -52,12 +57,14 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         txtUser = new javax.swing.JTextField();
-        btnEntrar = new javax.swing.JButton();
         btnES = new javax.swing.JButton();
         btnNC = new javax.swing.JButton();
         panelImg = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         txtPass = new javax.swing.JPasswordField();
+        jPanel2 = new javax.swing.JPanel();
+        btnEntrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Pick Fantasy");
@@ -82,6 +89,68 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
+        btnES.setText(" Esqueceu a senha?");
+        btnES.setBorder(null);
+        btnES.setOpaque(false);
+        btnES.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnESMouseClicked(evt);
+            }
+        });
+        btnES.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnESActionPerformed(evt);
+            }
+        });
+
+        btnNC.setText(" Nova Conta?");
+        btnNC.setBorder(null);
+        btnNC.setBorderPainted(false);
+        btnNC.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnNC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNCActionPerformed(evt);
+            }
+        });
+
+        panelImg.setLayout(null);
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\20162tpmi0111.UPD1\\Documents\\NetBeansProjects\\pickfantasy\\src\\images\\logoPequeno.png")); // NOI18N
+        panelImg.add(jLabel1);
+        jLabel1.setBounds(0, 0, 70, 100);
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 140, Short.MAX_VALUE)
+        );
+
+        panelImg.add(jPanel1);
+        jPanel1.setBounds(0, 30, 70, 140);
+
+        txtPass.setText("jPass1");
+        txtPass.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        txtPass.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtPassMouseClicked(evt);
+            }
+        });
+        txtPass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPassActionPerformed(evt);
+            }
+        });
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
         btnEntrar.setForeground(new java.awt.Color(255, 255, 255));
         btnEntrar.setText("Entrar");
         btnEntrar.setBorder(null);
@@ -102,80 +171,60 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        btnES.setText(" Esqueceu a senha?");
-        btnES.setBorder(null);
-        btnES.setOpaque(false);
-        btnES.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnESActionPerformed(evt);
-            }
-        });
-
-        btnNC.setText(" Nova Conta?");
-        btnNC.setBorder(null);
-        btnNC.setBorderPainted(false);
-        btnNC.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnNC.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNCActionPerformed(evt);
-            }
-        });
-
-        panelImg.setLayout(null);
-
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\brhue\\Documents\\NetBeansProjects\\pickfantasy\\src\\images\\logoPequeno.png")); // NOI18N
-        panelImg.add(jLabel1);
-        jLabel1.setBounds(10, 40, 80, 80);
-
-        txtPass.setText("jPass1");
-        txtPass.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        txtPass.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtPassMouseClicked(evt);
-            }
-        });
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnEntrar, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(69, 69, 69)
+                .addComponent(btnEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(190, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(192, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnES, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnNC, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(175, 175, 175))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(panelImg, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(149, 149, 149))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(261, 261, 261))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(txtUser)
-                            .addComponent(txtPass, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE))
-                        .addGap(243, 243, 243))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panelImg, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(275, 275, 275))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(108, 108, 108)
+                .addComponent(btnES, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtUser)
+                    .addComponent(txtPass)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnNC, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 171, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(63, 63, 63)
-                .addComponent(panelImg, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(txtUser, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(txtPass, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(btnEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(163, 163, 163)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnES, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnNC, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnNC, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(panelImg, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(75, 75, 75)
+                        .addComponent(txtUser, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtPass, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnES, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(78, 78, 78))
         );
 
         getAccessibleContext().setAccessibleName("PickFantasy");
@@ -248,23 +297,39 @@ public class Login extends javax.swing.JFrame {
         
         if(cadastro.isVisible() == true){
             
-            btnES.setVisible(false);
-            btnNC.setVisible(false);
-            btnEntrar.setVisible(false);
-            panelImg.setVisible(false);
-            txtUser.setVisible(false);
-            txtPass.setVisible(false);
+            setLogin(false);
             
         }
         
         
     }//GEN-LAST:event_btnNCActionPerformed
+
+    private void txtPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPassActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPassActionPerformed
+
+    private void btnESMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnESMouseClicked
+        // CLICK ESQUECEU A SENHA ?
+        
+        if(esqueceuSenha == null){
+            esqueceuSenha = new EsqueceuSenha(this);
+            this.add(esqueceuSenha);
+        }esqueceuSenha.setVisible(true);
+        
+        if(esqueceuSenha.isVisible() == true){
+            setLogin(false);
+        }
+        
+        
+        
+    }//GEN-LAST:event_btnESMouseClicked
     
     private void meuInit() {
         //Cor de fundo
         this.getContentPane().setBackground(Color.WHITE);
         //Image Logo
         this.panelImg.setBackground(Color.WHITE);
+        
         
         // Button
         this.btnES.setBackground(colorPreto);
@@ -322,6 +387,8 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton btnEntrar;
     private javax.swing.JButton btnNC;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel panelImg;
     private javax.swing.JPasswordField txtPass;
     private javax.swing.JTextField txtUser;

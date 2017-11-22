@@ -14,6 +14,24 @@ public class Usuario {
     private String user_name;
     private String senha;
     private String email;
+    private String palavraChave;
+    private int tipo;
+
+    public int getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(int tipo) {
+        this.tipo = tipo;
+    }
+
+    public String getPalavraChave() {
+        return palavraChave;
+    }
+
+    public void setPalavraChave(String palavraChave) {
+        this.palavraChave = palavraChave;
+    }
 
     public String getEmail() {
         return email;
@@ -49,13 +67,6 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public int getPontos() {
-        return pontos;
-    }
-
-    public void setPontos(int pontos) {
-        this.pontos = pontos;
-    }
 
     public int getUser_id() {
         return user_id;
