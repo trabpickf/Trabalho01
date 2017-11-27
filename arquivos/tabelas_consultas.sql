@@ -70,3 +70,16 @@ SELECT etapa.nome, id_etapa FROM etapa LEFT OUTER JOIN etapa_campeonato ON etapa
 SELECT user_name,id_partida, placar, ganhador FROM aposta_usuario_partida_time LEFT OUTER JOIN partida ON
 partida.id_partida = aposta_usuario_partida_time.FK_PARTIDA_id_partida
 RIGHT OUTER JOIN usuario ON aposta_usuario_partida_time.FK_USUARIO_user_id = usuario.user_id;
+
+#9.9
+
+create view ranking_usuarios as select user_name as usuario, pontos from usuario order by usuario.pontos desc;
+select * from ranking_usuarios;
+create view jogadores_times as select jogador.apelido, time.nome from jogador inner join time on(jogador.FK_TIME_id_time = time.id_time);
+select * from jogadores_times;
+
+#9.10
+
+select * from jogador where nome in (SELECT nome FROM jogador WHERE nome LIKE "m%");
+select * from time where nome in (SELECT nome FROM time WHERE nacionalidade <> 'Brasileira');
+select * from usuario where nome in (SELECT nome FROM usuario WHERE pontos >= 300);
