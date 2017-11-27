@@ -142,6 +142,12 @@ select * from jogadores_times;<br>
 
 
 ### 9.10 SUBCONSULTAS (Mínimo 3) <br>
+select * from jogador where nome in (SELECT nome FROM jogador WHERE nome LIKE "m%");<br>
+<img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.10%201.PNG" /><br><br>
+select * from time where nome in (SELECT nome FROM time WHERE nacionalidade <> 'Brasileira');<br>
+<img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.10%202.PNG" /><br><br>
+select * from usuario where nome in (SELECT nome FROM usuario WHERE pontos >= 300);<br>
+<img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.10%203.PNG" /><br>
 
     Entrega 13/11
 
