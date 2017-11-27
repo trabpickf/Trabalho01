@@ -280,8 +280,10 @@ public class Login extends javax.swing.JFrame {
         // AUTENTICANDO USUARIO
          UsuarioDAO uDao = new UsuarioDAO();
        if(uDao.checkLogin( txtUser.getText(), txtPass.getText())){
-           new Principal().setVisible(true);
-           this.dispose();
+           if(uDao.isAdm(txtUser.getText()) == 0){  // Retorna 
+            new Principal().setVisible(true);
+            this.dispose();
+           }
        }else{
             JOptionPane.showMessageDialog(null, "Usuario não cadastrado!");
         }

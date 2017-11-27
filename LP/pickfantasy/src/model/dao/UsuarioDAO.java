@@ -69,7 +69,11 @@ public class UsuarioDAO {
         }finally{
             ConnectionFactory.closeConnection(con, stmt, rs);
         }
+        
+      
+        
         return check;
+        
     }
    
    public boolean userExists(String txtUser, String txtEmail){
@@ -110,8 +114,9 @@ public class UsuarioDAO {
             
             rs = stmt.executeQuery();
             
-            if(rs.next()){
+            while(rs.next()){
                 check = true;
+                
             }
                     
                     } catch (SQLException ex) {
@@ -143,6 +148,39 @@ public class UsuarioDAO {
         }finally{
             ConnectionFactory.closeConnection(con, stmt, rs);
         }
+   }
+   
+   public int isAdm(String usuario){
+       
+       // 0 para usuário comum
+       // 1 para ADM
+       int tipo = 0;
+       
+       Connection con = ConnectionFactory.getConnection();
+       PreparedStatement stmt = null;
+       ResultSet rs = null;
+      
+       
+        try {
+            stmt = con.prepareStatement("SELECT * FROM usuario WHERE user_name = ?");
+            stmt.setString(1, usuario);
+            rs = stmt.executeQuery();
+            
+            while(rs.next()){
+                tipo = rs.getInt("tipo_user");
+            }
+            
+            System.out.println(tipo);
+           
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null,"Não foi possível identificar o tipo do usuário." +ex);
+        }
+       
+       
+        return tipo;
+   
+       
    }
    
    
