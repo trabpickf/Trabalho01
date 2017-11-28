@@ -1,3 +1,17 @@
 ﻿Validação dos campos de cadastro; - Feito
 Criptografia dos campos necessários;
 Verificação de usuário já existente; - Feito
+
+
+
+
+Conectar CriarPartida a Principal-
+CriarPartida criar partida -
+Criar Deletar Partida -
+
+
+Mostrar as partidas criadas no Principal -
+
+
+Conectar AlterarPartida a Principal -
+Listar todas as partidas criadas(no max 10) -
