@@ -153,6 +153,7 @@ select * from usuario where nome in (SELECT nome FROM usuario WHERE pontos >= 30
 
 ### 10	ATUALIZAÇÃO DA DOCUMENTAÇÃO DOS SLIDES<br>
 ### 11	DIFICULDADES ENCONTRADAS PELO GRUPO<br>
+**[Clique aqui!](https://github.com/trabpickf/Trabalho01/blob/master/arquivos/Slide%20BD.pdf "Slide") Para acessar o SLIDE.**<br>
 
 ### 12  FORMATACAO NO GIT: https://help.github.com/articles/basic-writing-and-formatting-syntax/
 
