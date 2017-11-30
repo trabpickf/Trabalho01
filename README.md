@@ -37,6 +37,9 @@ E por fim, a última tela da página inicial é a de partidas, onde o usuário e
 #### 5.1 DESCRIÇÃO DOS DADOS
    ![Clique aqui!](https://github.com/trabpickf/Trabalho01/blob/master/arquivos/descricao_dados.txt "Descrição dos dados") Para acessar a descrição dos dados.
 
+#### 5.2 DESCRIÇÃO DOS DADOS
+   a) Tabela Partida: Optamos por utilizar, no momento, o campo "Placar" unico e como string para agilizar o processo do trabalho. Futuramente pretendemos dividir esse campo em dois e utilizar de valores Inteiros para contabilizar os rounds ganhos por cada time de forma mais eficiente.
+
 <hr>
 
 ### 6	MODELO LÓGICO<br>
