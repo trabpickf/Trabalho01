@@ -136,6 +136,9 @@ RIGHT OUTER JOIN usuario ON aposta_usuario_partida_time.FK_USUARIO_user_id = usu
 <img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.8%204.PNG" /><br>
 
 ### 9.9 CONSULTAS COM SELF JOIN (todas) E VIEW (mais importantes)<br>
+select time.nome as 'Time Desafiante',time2.nome as 'Time Desafiado' from time inner join partida
+on(time.id_time = partida.FK_TIME_id_time) inner join time time2 on(time2.id_time = partida.FK_TIME_id_time2);<br>
+<img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.9%201.PNG" /><br><br><br>
 create view ranking_usuarios as select user_name as usuario, pontos from usuario order by usuario.pontos desc;<br>
 select * from ranking_usuarios;<br>
 <img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/view%20ranking_usuarios.PNG" /><br><br>
