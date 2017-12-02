@@ -1,17 +1,18 @@
 ﻿Validação dos campos de cadastro; - Feito
 Criptografia dos campos necessários;
 Verificação de usuário já existente; - Feito
-
-
-
-
-Conectar CriarPartida a Principal-
-CriarPartida criar partida -
+Conectar CriarPartida a Principal- Feito
+CriarPartida criar partida - Feito
 Criar Deletar Partida -
 
 
 Mostrar as partidas criadas no Principal -
 
 
-Conectar AlterarPartida a Principal -
+Conectar AlterarPartida a Principal - 
 Listar todas as partidas criadas(no max 10) -
+
+Configurar para que só abra uma internalJframe de cada vez -
+Configurar botão pra add/deletar time no banco -
+
+crud para Partida -

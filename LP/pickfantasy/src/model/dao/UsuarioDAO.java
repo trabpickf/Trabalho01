@@ -48,6 +48,7 @@ public class UsuarioDAO {
     }
     
    public boolean checkLogin(String login, String senha){
+        // Checando login na tentativa de logar no sistema
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -77,7 +78,7 @@ public class UsuarioDAO {
     }
    
    public boolean userExists(String txtUser, String txtEmail){
-       
+       // Checando a existência do usuário para recuperar a conta
        Connection con = ConnectionFactory.getConnection();
        PreparedStatement stmt = null;
        ResultSet rs = null;
@@ -101,6 +102,7 @@ public class UsuarioDAO {
     }
    
    public boolean checkCorrect(String email, String palavra_chave){
+       // Verificando se os dados passados para recuperar a conta, estão corretos
        boolean check = false;
        
        Connection con = ConnectionFactory.getConnection();
@@ -129,7 +131,7 @@ public class UsuarioDAO {
    }
    
    public static void resetPassword(String senha, String email ,String palavra_chave){
-       
+       // Para resetar a senha do usuário
        Connection con = ConnectionFactory.getConnection();
        PreparedStatement stmt = null;
        ResultSet rs = null;
@@ -151,7 +153,7 @@ public class UsuarioDAO {
    }
    
    public int isAdm(String usuario){
-       
+       // Verificar o tipo de usuário, para determinar a tela que irá aparecer
        // 0 para usuário comum
        // 1 para ADM
        int tipo = 0;
