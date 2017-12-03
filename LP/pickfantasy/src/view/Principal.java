@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
 import view.adm.AlterarTime;
 import view.adm.CriarPartida;
 
@@ -299,6 +300,7 @@ public class Principal extends javax.swing.JFrame {
             alterarTime = new AlterarTime(this);
             this.add(alterarTime);
         }alterarTime.setVisible(true);
+        
     }//GEN-LAST:event_iMenuAlterarTActionPerformed
 
     /**

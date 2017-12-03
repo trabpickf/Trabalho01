@@ -12,6 +12,7 @@ package model.bean;
 public class Time {
     private String nomeTime;
     private String nacionalidade;
+    
 
     public String getNomeTime() {
         return nomeTime;

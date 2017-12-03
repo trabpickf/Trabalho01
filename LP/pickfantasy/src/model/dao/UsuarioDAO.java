@@ -172,7 +172,7 @@ public class UsuarioDAO {
                 tipo = rs.getInt("tipo_user");
             }
             
-            System.out.println(tipo);
+           
            
             
         } catch (SQLException ex) {
@@ -184,8 +184,5 @@ public class UsuarioDAO {
    
        
    }
-   
-   
-
    
 }
