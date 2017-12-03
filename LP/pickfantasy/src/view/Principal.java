@@ -2,9 +2,8 @@ package view;
 
 import java.awt.Color;
 import javax.swing.JOptionPane;
+import view.adm.AlterarPartida;
 import view.adm.AlterarTime;
-import view.adm.CriarPartida;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -16,8 +15,8 @@ import view.adm.CriarPartida;
  * @author brhue
  */
 public class Principal extends javax.swing.JFrame {
-    private CriarPartida criarPartida = null;
     private AlterarTime alterarTime = null;
+    private AlterarPartida alterarPartida = null;
     
     
     public void setInvisivel(boolean invisible){
@@ -25,21 +24,42 @@ public class Principal extends javax.swing.JFrame {
         this.panelPrincipal.setVisible(!invisible);
     }
     
-    public void meuInit(){
-        this.getContentPane().setBackground(Color.WHITE);
+    public void setVisivelAdm(){
+        //Se falso, aparece
+        if(!panelPrincipalAdm.isVisible()){
+            panelPrincipalAdm.setVisible(true);
+        }
     }
-    public Principal(int tipo_user) {
-        initComponents();
-        meuInit();
+    
+ 
+    
+    public void meuInitUser(int tipo_user){
+        // PRINCIPAL VISTO PELO USUÁRIO COMUM
         if(tipo_user == 0){
             this.menuPartida.setVisible(false);
             this.menuTime.setVisible(false);
+        }else{
+            setInvisivel(true);
+            this.getContentPane().setBackground(Color.WHITE);
         }
+        
+        
+    }
+    
+    public void meuInitUser(){
+        setInvisivel(true);
+    }
+    
+    public Principal(int tipo_user) {
+        initComponents();
+        panelPrincipal.setBackground(Color.WHITE);
+        meuInitUser(tipo_user);
+        
     }
     
     public Principal(){
         initComponents();
-        meuInit();
+       
     }
 
     /**
@@ -52,8 +72,6 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         panelPrincipal = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jCheckBox1 = new javax.swing.JCheckBox();
         jCheckBox2 = new javax.swing.JCheckBox();
@@ -62,34 +80,28 @@ public class Principal extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
+        panelPrincipalAdm = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel9 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         meuOpcoes = new javax.swing.JMenu();
         iMenuSair = new javax.swing.JMenuItem();
         menuPartida = new javax.swing.JMenu();
         iMenuAlterarP = new javax.swing.JMenuItem();
-        iMenuCriarP = new javax.swing.JMenuItem();
-        iMenuDeletarP = new javax.swing.JMenuItem();
         menuTime = new javax.swing.JMenu();
         iMenuAlterarT = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(600, 600));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        panelPrincipal.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel4.setText("jLabel4");
 
@@ -139,11 +151,6 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(jLabel4)
                             .addComponent(jLabel2))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(panelPrincipalLayout.createSequentialGroup()
-                    .addContainerGap(566, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap()))
         );
         panelPrincipalLayout.setVerticalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -168,13 +175,74 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(jLabel5))))
                 .addGap(36, 36, 36)
                 .addComponent(jLabel4)
-                .addContainerGap(376, Short.MAX_VALUE))
-            .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(panelPrincipalLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(564, Short.MAX_VALUE)))
+                .addContainerGap(415, Short.MAX_VALUE))
         );
+
+        panelPrincipalAdm.setBackground(new java.awt.Color(255, 255, 255));
+        panelPrincipalAdm.setLayout(null);
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoPequeno.png"))); // NOI18N
+        panelPrincipalAdm.add(jLabel7);
+        jLabel7.setBounds(260, 40, 70, 70);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel1.setText("Pick Fantasy");
+        panelPrincipalAdm.add(jLabel1);
+        jLabel1.setBounds(230, 100, 180, 50);
+
+        jLabel8.setText("ADMINISTRADOR");
+        panelPrincipalAdm.add(jLabel8);
+        jLabel8.setBounds(255, 150, 120, 14);
+
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 153));
+        panelPrincipalAdm.add(jSeparator1);
+        jSeparator1.setBounds(10, 190, 576, 16);
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gearwheelPequeno.png"))); // NOI18N
+        jLabel9.setMaximumSize(new java.awt.Dimension(50, 50));
+        jLabel9.setMinimumSize(new java.awt.Dimension(50, 50));
+        jLabel9.setPreferredSize(new java.awt.Dimension(50, 50));
+        panelPrincipalAdm.add(jLabel9);
+        jLabel9.setBounds(40, 230, 50, 50);
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(null);
+
+        jLabel10.setText("Adicione ou remova partidas");
+        jPanel1.add(jLabel10);
+        jLabel10.setBounds(80, 10, 200, 14);
+
+        jLabel12.setText("Altere os placares das partidas");
+        jPanel1.add(jLabel12);
+        jLabel12.setBounds(80, 30, 220, 14);
+
+        jLabel11.setText("Adicione ou remova times");
+        jPanel1.add(jLabel11);
+        jLabel11.setBounds(80, 50, 210, 14);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 500, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 204, Short.MAX_VALUE)))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)))
+        );
+
+        panelPrincipalAdm.add(jPanel3);
+        jPanel3.setBounds(30, 210, 500, 100);
 
         meuOpcoes.setText("Opções");
         meuOpcoes.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -196,28 +264,17 @@ public class Principal extends javax.swing.JFrame {
         menuPartida.setText("Partida");
 
         iMenuAlterarP.setText("Alterar Partida");
+        iMenuAlterarP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                iMenuAlterarPMouseClicked(evt);
+            }
+        });
         iMenuAlterarP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 iMenuAlterarPActionPerformed(evt);
             }
         });
         menuPartida.add(iMenuAlterarP);
-
-        iMenuCriarP.setText("Criar Partida");
-        iMenuCriarP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                iMenuCriarPActionPerformed(evt);
-            }
-        });
-        menuPartida.add(iMenuCriarP);
-
-        iMenuDeletarP.setText("Deletar Partida");
-        iMenuDeletarP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                iMenuDeletarPActionPerformed(evt);
-            }
-        });
-        menuPartida.add(iMenuDeletarP);
 
         jMenuBar1.add(menuPartida);
 
@@ -244,13 +301,15 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(panelPrincipalAdm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(panelPrincipalAdm, javax.swing.GroupLayout.DEFAULT_SIZE, 614, Short.MAX_VALUE))
         );
 
         pack();
@@ -266,23 +325,18 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_meuOpcoesMouseClicked
 
     private void iMenuAlterarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iMenuAlterarPActionPerformed
-        // TODO add your handling code here:
-         setInvisivel(true);
+        //Abrir Janela AlterarPartida
+        panelPrincipalAdm.setVisible(false);
+       if(alterarTime != null){
+           alterarTime.setVisible(false);
+       }
+      
+        if(alterarPartida == null){
+            alterarPartida = new AlterarPartida(this);
+            this.add(alterarPartida);
+        }alterarPartida.setVisible(true);
+        
     }//GEN-LAST:event_iMenuAlterarPActionPerformed
-
-    private void iMenuCriarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iMenuCriarPActionPerformed
-         setInvisivel(true);
-        if(criarPartida == null){
-            criarPartida = new CriarPartida();
-            this.add(criarPartida);
-        }criarPartida.setVisible(true);
-    }//GEN-LAST:event_iMenuCriarPActionPerformed
-
-    private void iMenuDeletarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iMenuDeletarPActionPerformed
-        // TODO add your handling code here:
-        setInvisivel(true);
-
-    }//GEN-LAST:event_iMenuDeletarPActionPerformed
 
     private void iMenuSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iMenuSairActionPerformed
         // TODO add your handling code here:
@@ -296,12 +350,22 @@ public class Principal extends javax.swing.JFrame {
 
     private void iMenuAlterarTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iMenuAlterarTActionPerformed
         setInvisivel(true);
+        panelPrincipalAdm.setVisible(false);
+         
+        if(alterarPartida != null){
+            alterarPartida.setVisible(false);
+        }
+        
         if(alterarTime == null){
             alterarTime = new AlterarTime(this);
             this.add(alterarTime);
         }alterarTime.setVisible(true);
         
     }//GEN-LAST:event_iMenuAlterarTActionPerformed
+
+    private void iMenuAlterarPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iMenuAlterarPMouseClicked
+
+    }//GEN-LAST:event_iMenuAlterarPMouseClicked
 
     /**
      * @param args the command line arguments
@@ -341,23 +405,30 @@ public class Principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem iMenuAlterarP;
     private javax.swing.JMenuItem iMenuAlterarT;
-    private javax.swing.JMenuItem iMenuCriarP;
-    private javax.swing.JMenuItem iMenuDeletarP;
     private javax.swing.JMenuItem iMenuSair;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JMenu menuPartida;
     private javax.swing.JMenu menuTime;
     private javax.swing.JMenu meuOpcoes;
     private javax.swing.JPanel panelPrincipal;
+    private javax.swing.JPanel panelPrincipalAdm;
     // End of variables declaration//GEN-END:variables
 }

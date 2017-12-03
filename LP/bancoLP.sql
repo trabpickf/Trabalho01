@@ -15,7 +15,8 @@ CREATE TABLE USUARIO (
 
 CREATE TABLE PARTIDA (
     id_partida int PRIMARY KEY auto_increment,
-    placar varchar(10),
+    placar_time1 int (2) default 0,
+    placar_time2 int(2) default 0,
     ganhador varchar(20),
     data date,
     FK_CAMPEONATOS_id_campeonato int,
@@ -155,3 +156,4 @@ VALUES ('ez', 'Ezequiel','eze@aaa.com','1', 1, 'ola');
 
 
 SELECT * FROM usuario LIMIT 100;
+select * from time;
