@@ -32,7 +32,7 @@ public class UsuarioDAO{
         PreparedStatement stmt = null;
         
         try {
-            stmt = con.prepareStatement("INSERT INTO usuario( user_name, nome, email,palavra_chave, senha) VALUES (?,?,?,?,?)");
+            stmt = con.prepareStatement("INSERT INTO USUARIO( user_name, nome, email,palavra_chave, senha) VALUES (?,?,?,?,?)");
             stmt.setString(1, u.getUser_name());
             stmt.setString(2, u.getNome());
             stmt.setString(3, u.getEmail());
@@ -54,7 +54,7 @@ public class UsuarioDAO{
         PreparedStatement stmt = null;
         
         try {
-            stmt = con.prepareStatement("INSERT INTO usuario( user_name, nome, email,palavra_chave, senha, tipo) VALUES (?,?,?,?,?,?)");
+            stmt = con.prepareStatement("INSERT INTO USUARIO( user_name, nome, email,palavra_chave, senha, tipo) VALUES (?,?,?,?,?,?)");
             stmt.setString(1, u.getUser_name());
             stmt.setString(2, u.getNome());
             stmt.setString(3, u.getEmail());
@@ -80,7 +80,7 @@ public class UsuarioDAO{
         boolean check = false;
         
         try {
-            stmt = con.prepareStatement("SELECT * FROM usuario WHERE user_name = ? and senha = ?");
+            stmt = con.prepareStatement("SELECT * FROM USUARIO WHERE user_name = ? and senha = ?");
             stmt.setString(1, login);
             stmt.setString(2, senha);
             
@@ -110,7 +110,7 @@ public class UsuarioDAO{
        boolean check = false;
        
         try {
-            stmt = con.prepareStatement("SELECT * FROM usuario WHERE user_name = ? OR email = ?");
+            stmt = con.prepareStatement("SELECT * FROM USUARIO WHERE user_name = ? OR email = ?");
             stmt.setString(1, txtUser);
             stmt.setString(2, txtEmail);
             rs = stmt.executeQuery();
@@ -135,7 +135,7 @@ public class UsuarioDAO{
        ResultSet rs = null;
        // ADICIONAR VERIFICAÇÃO DE TIPO
        try {
-            stmt = con.prepareStatement("SELECT * FROM usuario WHERE  email = ? and palavra_chave= ?");
+            stmt = con.prepareStatement("SELECT * FROM USUARIO WHERE  email = ? and palavra_chave= ?");
             stmt.setString(1, email);
             stmt.setString(2, palavra_chave);
             
@@ -162,7 +162,7 @@ public class UsuarioDAO{
        ResultSet rs = null;
        
         try {
-            stmt = con.prepareStatement("UPDATE usuario SET senha = ? WHERE  email = ? AND palavra_chave = ?");
+            stmt = con.prepareStatement("UPDATE USUARIO SET senha = ? WHERE  email = ? AND palavra_chave = ?");
             stmt.setString(1, senha);
             stmt.setString(2, email);
             stmt.setString(3, palavra_chave);
@@ -189,7 +189,7 @@ public class UsuarioDAO{
       
        
         try {
-            stmt = con.prepareStatement("SELECT * FROM usuario WHERE user_name = ?");
+            stmt = con.prepareStatement("SELECT * FROM USUARIO WHERE user_name = ?");
             stmt.setString(1, usuario);
             rs = stmt.executeQuery();
             

@@ -21,7 +21,7 @@ public class ConnectionFactory {
     private static final String DRIVER = "com.mysql.jdbc.Driver";
     private static final String URL = "jdbc:mysql://localhost:3306/pickfantasy";
     private static final String USER = "root";
-    private static final String PASS = "root";
+    private static final String PASS = "serra";
     
     public static Connection getConnection(){
         

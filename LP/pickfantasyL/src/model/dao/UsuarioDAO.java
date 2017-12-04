@@ -86,7 +86,7 @@ public class UsuarioDAO{
             
             rs = stmt.executeQuery();
             
-            if(rs.next()){
+            while(rs.next()){
                 check = true;
             }
                     
@@ -114,7 +114,7 @@ public class UsuarioDAO{
             stmt.setString(1, txtUser);
             stmt.setString(2, txtEmail);
             rs = stmt.executeQuery();
-            if(rs.next()){
+            while(rs.next()){
                 check = true;
             }
         } catch (SQLException ex) {

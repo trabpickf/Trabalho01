@@ -40,6 +40,7 @@ public class Principal extends javax.swing.JFrame {
         if(tipo_user == 0){
             this.menuPartida.setVisible(false);
             this.menuTime.setVisible(false);
+            this.criarADM.setVisible(false);
         }else{
             setInvisivel(true);
             this.getContentPane().setBackground(Color.WHITE);

@@ -27,7 +27,7 @@ public class AdministradorDAO extends UsuarioDAO{
        ResultSet rs = null;
        // ADICIONAR VERIFICAÇÃO DE TIPO
        try {
-            stmt = con.prepareStatement("SELECT * FROM USUARIO WHERE  user_name = ? and email= ? AND codADM = ?");
+            stmt = con.prepareStatement("SELECT * FROM USUARIO WHERE codADM = ?");
             stmt.setString(1, codAdm);
             
             rs = stmt.executeQuery();
@@ -46,24 +46,27 @@ public class AdministradorDAO extends UsuarioDAO{
        return check;
     }
     
-    public static void create(String userName, String email){
+    public static void create(String userName, String email, int tipo){
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         ResultSet rs = null;
         
+        
          try {
-            stmt = con.prepareStatement("UPDATE USUARIO SET tipo=? WHERE  user_name = ? and email= ?");
-            stmt.setInt(1, 1); // Colocando como tipo = 1 
+            stmt = con.prepareStatement("UPDATE USUARIO SET tipo_user=? WHERE  user_name = ? and email= ?");
+            stmt.setInt(1, tipo); // Colocando como tipo = 1 
             stmt.setString(2,userName);
             stmt.setString(3,email);
             stmt.executeUpdate();            
            
                     
                     } catch (SQLException ex) {
-                        JOptionPane.showMessageDialog(null,"Erro ao autenteicar usuário: " + ex);
+                        JOptionPane.showMessageDialog(null,"-Erro ao autenteicar usuário: " + ex);
         }finally{
             ConnectionFactory.closeConnection(con, stmt, rs);
         }
         
     }
+    
+    
 }

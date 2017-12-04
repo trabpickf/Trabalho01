@@ -17,7 +17,7 @@ public class Usuario {
     private String palavraChave;
     private int tipo = 0;
     
-    public Usuario(String nome, String user_name, String senha, String email, String palavraChave){
+    public Usuario(String nome,String user_name,String email, String palavraChave,String senha){
         this.nome = nome;
         this.user_name = user_name;
         this.senha = senha;

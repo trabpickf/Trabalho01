@@ -5,6 +5,7 @@
  */
 package view.adm;
 
+import javax.swing.JOptionPane;
 import model.dao.AdministradorDAO;
 import model.dao.UsuarioDAO;
 import view.Principal;
@@ -46,10 +47,18 @@ public class AlterarAdm extends javax.swing.JInternalFrame {
         txtEmail = new javax.swing.JTextField();
         txtCodAdm = new javax.swing.JTextField();
 
+        setClosable(true);
+        setTitle("Alterar Administrador");
+
         btnOk.setText("OK");
         btnOk.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnOkMouseClicked(evt);
+            }
+        });
+        btnOk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOkActionPerformed(evt);
             }
         });
 
@@ -60,7 +69,7 @@ public class AlterarAdm extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel1.setText("jLabel1");
+        jLabel1.setText("Criar Adm:");
 
         jLabel2.setText("Nome:");
 
@@ -141,7 +150,8 @@ public class AlterarAdm extends javax.swing.JInternalFrame {
         if(UsuarioDAO.userExists(userName, email)){
             if(AdministradorDAO.checkCorrect(codAdm)){
                 // Administrador update o tipo do usuario para 1
-            
+               AdministradorDAO.create(userName, email);
+                JOptionPane.showMessageDialog(null, "Alterado para administrador.");
             }
         }
         
@@ -155,6 +165,10 @@ public class AlterarAdm extends javax.swing.JInternalFrame {
             principal.setVisivelAdm();
         }
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void btnOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnOkActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

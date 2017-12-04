@@ -343,9 +343,7 @@ public class Principal extends javax.swing.JFrame {
         panelPrincipalAdm.setVisible(false);
        if(alterarTime != null){
            alterarTime.setVisible(false);
-       }else if(alterarAdm != null){
-            alterarAdm.setVisible(false);
-        }
+       }
       
         if(alterarPartida == null){
             alterarPartida = new AlterarPartida(this);
@@ -370,8 +368,6 @@ public class Principal extends javax.swing.JFrame {
          
         if(alterarPartida != null){
             alterarPartida.setVisible(false);
-        }else if(alterarAdm != null){
-            alterarAdm.setVisible(false);
         }
         
         if(alterarTime == null){
@@ -392,7 +388,7 @@ public class Principal extends javax.swing.JFrame {
     private void criarADMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_criarADMActionPerformed
         // TODO add your handling code here:
         //setInvisivel(true);
-        panelPrincipalAdm.setVisible(false);
+       /* panelPrincipalAdm.setVisible(false);
         
         if(alterarTime != null){
            alterarTime.setVisible(false);
@@ -402,7 +398,10 @@ public class Principal extends javax.swing.JFrame {
         if(alterarAdm ==null){
             alterarAdm = new AlterarAdm(this);
             this.add(alterarAdm);
-        }alterarAdm.setVisible(true);
+        }alterarAdm.setVisible(true);*/
+       
+       new AlterarAdm(this).setVisible(true);
+       
     }//GEN-LAST:event_criarADMActionPerformed
 
     /**
