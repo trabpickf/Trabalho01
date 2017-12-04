@@ -2,6 +2,7 @@ package view;
 
 import java.awt.Color;
 import javax.swing.JOptionPane;
+import view.adm.AlterarAdm;
 import view.adm.AlterarPartida;
 import view.adm.AlterarTime;
 /*
@@ -17,6 +18,7 @@ import view.adm.AlterarTime;
 public class Principal extends javax.swing.JFrame {
     private AlterarTime alterarTime = null;
     private AlterarPartida alterarPartida = null;
+    private AlterarAdm alterarAdm = null;
     
     
     public void setInvisivel(boolean invisible){
@@ -93,6 +95,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         meuOpcoes = new javax.swing.JMenu();
+        criarADM = new javax.swing.JMenuItem();
         iMenuSair = new javax.swing.JMenuItem();
         menuPartida = new javax.swing.JMenu();
         iMenuAlterarP = new javax.swing.JMenuItem();
@@ -199,9 +202,6 @@ public class Principal extends javax.swing.JFrame {
         jSeparator1.setBounds(10, 190, 576, 16);
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gearwheelPequeno.png"))); // NOI18N
-        jLabel9.setMaximumSize(new java.awt.Dimension(50, 50));
-        jLabel9.setMinimumSize(new java.awt.Dimension(50, 50));
-        jLabel9.setPreferredSize(new java.awt.Dimension(50, 50));
         panelPrincipalAdm.add(jLabel9);
         jLabel9.setBounds(40, 230, 50, 50);
 
@@ -250,6 +250,19 @@ public class Principal extends javax.swing.JFrame {
                 meuOpcoesMouseClicked(evt);
             }
         });
+
+        criarADM.setText("Criar ADM");
+        criarADM.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                criarADMMouseClicked(evt);
+            }
+        });
+        criarADM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                criarADMActionPerformed(evt);
+            }
+        });
+        meuOpcoes.add(criarADM);
 
         iMenuSair.setText("Sair");
         iMenuSair.addActionListener(new java.awt.event.ActionListener() {
@@ -329,7 +342,9 @@ public class Principal extends javax.swing.JFrame {
         panelPrincipalAdm.setVisible(false);
        if(alterarTime != null){
            alterarTime.setVisible(false);
-       }
+       }else if(alterarAdm != null){
+            alterarAdm.setVisible(false);
+        }
       
         if(alterarPartida == null){
             alterarPartida = new AlterarPartida(this);
@@ -349,11 +364,13 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_iMenuAlterarTMouseClicked
 
     private void iMenuAlterarTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iMenuAlterarTActionPerformed
-        setInvisivel(true);
+        //setInvisivel(true);
         panelPrincipalAdm.setVisible(false);
          
         if(alterarPartida != null){
             alterarPartida.setVisible(false);
+        }else if(alterarAdm != null){
+            alterarAdm.setVisible(false);
         }
         
         if(alterarTime == null){
@@ -366,6 +383,26 @@ public class Principal extends javax.swing.JFrame {
     private void iMenuAlterarPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iMenuAlterarPMouseClicked
 
     }//GEN-LAST:event_iMenuAlterarPMouseClicked
+
+    private void criarADMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_criarADMMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_criarADMMouseClicked
+
+    private void criarADMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_criarADMActionPerformed
+        // TODO add your handling code here:
+        //setInvisivel(true);
+        panelPrincipalAdm.setVisible(false);
+        
+        if(alterarTime != null){
+           alterarTime.setVisible(false);
+       }else if(alterarPartida != null){
+           alterarPartida.setVisible(false);
+       }
+        if(alterarAdm ==null){
+            alterarAdm = new AlterarAdm(this);
+            this.add(alterarAdm);
+        }alterarAdm.setVisible(true);
+    }//GEN-LAST:event_criarADMActionPerformed
 
     /**
      * @param args the command line arguments
@@ -403,6 +440,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem criarADM;
     private javax.swing.JMenuItem iMenuAlterarP;
     private javax.swing.JMenuItem iMenuAlterarT;
     private javax.swing.JMenuItem iMenuSair;

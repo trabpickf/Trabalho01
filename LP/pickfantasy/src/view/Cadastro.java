@@ -9,6 +9,7 @@ import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import model.bean.Usuario;
+import model.bean.UsuarioComum;
 import model.dao.UsuarioDAO;
 
 /**
@@ -260,10 +261,10 @@ public class Cadastro extends javax.swing.JInternalFrame {
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         // TODO add your handling code here:
-        Usuario u = new Usuario();
-        UsuarioDAO uDao = new UsuarioDAO();
+        UsuarioComum u = null;
+        //UsuarioDAO uDao = new UsuarioDAO();
         
-        if(uDao.userExists(txtUser.getText(), txtEmail.getText())){
+        if(UsuarioDAO.userExists(txtUser.getText(), txtEmail.getText())){
             JOptionPane.showMessageDialog(null, "Usuário já existe.");
         }
         
@@ -271,15 +272,18 @@ public class Cadastro extends javax.swing.JInternalFrame {
             txtError.setText("Senhas diferentes!");
         }else{
             txtError.setText("");
-            u.setNome(txtNome.getText());
+            u = new UsuarioComum(txtNome.getText(),txtUser.getText(),txtEmail.getText(), txtPchave.getText(), txtPass1.getText());
+            
+            
+            /*u.setNome(txtNome.getText());
             u.setUser_name(txtUser.getText());
             u.setEmail(txtEmail.getText());
             u.setPalavraChave(txtPchave.getText());
-            u.setSenha(txtPass1.getText());
+            u.setSenha(txtPass1.getText());*/
             
         
         
-        uDao.create(u);
+        UsuarioDAO.create(u);
         
         txtNome.setText("");
         txtUser.setText("");

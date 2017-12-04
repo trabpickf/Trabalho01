@@ -15,7 +15,19 @@ public class Usuario {
     private String senha;
     private String email;
     private String palavraChave;
-    private int tipo;
+    private int tipo = 0;
+    
+    public Usuario(String nome, String user_name, String senha, String email, String palavraChave){
+        this.nome = nome;
+        this.user_name = user_name;
+        this.senha = senha;
+        this.email = email;
+        this.palavraChave = palavraChave;
+    }
+    
+    public Object tipoUser(){
+        return this.getClass();
+    }
 
     public int getTipo() {
         return tipo;

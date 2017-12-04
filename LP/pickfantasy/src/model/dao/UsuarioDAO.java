@@ -16,16 +16,18 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.bean.Usuario;
+import model.bean.UsuarioADM;
+import model.bean.UsuarioComum;
 
 /**
  *
  * @author brhue
  */
-public class UsuarioDAO {
+public class UsuarioDAO{
     
     // INSERINDO DADOS
     
-    public void create(Usuario u){
+    public static void create(UsuarioComum u){
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         
@@ -47,7 +49,30 @@ public class UsuarioDAO {
             }
     }
     
-   public boolean checkLogin(String login, String senha){
+    public static void create(UsuarioADM u){
+         Connection con = ConnectionFactory.getConnection();
+        PreparedStatement stmt = null;
+        
+        try {
+            stmt = con.prepareStatement("INSERT INTO usuario( user_name, nome, email,palavra_chave, senha, tipo) VALUES (?,?,?,?,?,?)");
+            stmt.setString(1, u.getUser_name());
+            stmt.setString(2, u.getNome());
+            stmt.setString(3, u.getEmail());
+            stmt.setString(4, u.getPalavraChave());
+            stmt.setString(5, u.getSenha());
+            stmt.setInt(6,u.getTipo());
+            
+            
+            stmt.executeUpdate();
+            JOptionPane.showMessageDialog(null,"Adimistrador criado com sucesso!");
+        }catch(SQLException ex){
+            JOptionPane.showMessageDialog(null,"Erro ao salvar!" + ex);
+        }finally{
+            ConnectionFactory.closeConnection(con, stmt);
+            }
+    }
+    
+   public static boolean checkLogin(String login, String senha){
         // Checando login na tentativa de logar no sistema
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
@@ -77,7 +102,7 @@ public class UsuarioDAO {
         
     }
    
-   public boolean userExists(String txtUser, String txtEmail){
+   public static boolean userExists(String txtUser, String txtEmail){
        // Checando a existência do usuário para recuperar a conta
        Connection con = ConnectionFactory.getConnection();
        PreparedStatement stmt = null;
@@ -101,7 +126,7 @@ public class UsuarioDAO {
        
     }
    
-   public boolean checkCorrect(String email, String palavra_chave){
+   public static boolean checkCorrect(String email, String palavra_chave){
        // Verificando se os dados passados para recuperar a conta, estão corretos
        boolean check = false;
        
@@ -152,7 +177,7 @@ public class UsuarioDAO {
         }
    }
    
-   public int isAdm(String usuario){
+   public static int isAdm(String usuario){
        // Verificar o tipo de usuário, para determinar a tela que irá aparecer
        // 0 para usuário comum
        // 1 para ADM
