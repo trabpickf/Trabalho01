@@ -10,6 +10,7 @@ CREATE TABLE USUARIO (
     senha varchar(50) not null,
     pontos int (10) default 0,
     tipo_user int(2) default 0,
+    codAdm int default null,
     palavra_chave varchar(20) not null
 );
 
@@ -17,7 +18,7 @@ CREATE TABLE PARTIDA (
     id_partida int PRIMARY KEY auto_increment,
     placar_time1 int (2) default 0,
     placar_time2 int(2) default 0,
-    ganhador varchar(20),
+    ganhador varchar(20) default null,
     data date,
     FK_CAMPEONATOS_id_campeonato int,
     FK_TIME_id_time2 int,
@@ -28,6 +29,9 @@ CREATE TABLE CAMPEONATOS (
     id_campeonato int PRIMARY KEY auto_increment,
     nome varchar(50)
 );
+
+
+
 
 CREATE TABLE TIME (
     id_time int PRIMARY KEY auto_increment,
@@ -151,9 +155,20 @@ ALTER TABLE ALCANCOU ADD CONSTRAINT FK_ALCANCOU_1
 ALTER TABLE pickfantasy.time ADD COLUMN (
 Campeonato varchar (40)
 );
-INSERT INTO usuario( user_name, nome, email, senha, tipo_user,palavra_chave)
-VALUES ('ez', 'Ezequiel','eze@aaa.com','1', 1, 'ola');
+INSERT INTO usuario( user_name, nome, email, senha, tipo_user,palavra_chave, codAdm)
+VALUES ('ez', 'Ezequiel','eze@aaa.com','1', 1, 'ola',1);
 
+insert into campeonatos(nome) values ('CS');
+insert into time(nome, nacionalidade) values('Keyd', 'BR'), ('Pain','EUA');
+
+insert into partida(data, FK_CAMPEONATOS_id_campeonato,FK_TIME_id_time2,FK_TIME_id_time)
+VALUES ('2010-10-11',1,1,2);
 
 SELECT * FROM usuario LIMIT 100;
 select * from time;
+select * from campeonatos;
+select * from partida;
+
+SELECT TIME.nome FROM PARTIDA INNER JOIN TIME ON PARTIDA.FK_TIME_id_time = id_time AND PARTIDA.FK_TIME_id_time2 = id_time;
+
+SELECT TIME.nome as time1, (select nome as t2 from time inner join partida on partida.FK_TIME_id_time2 = id_time) as time2 FROM PARTIDA INNER JOIN TIME ON PARTIDA.FK_TIME_id_time = id_time;

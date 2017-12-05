@@ -1,7 +1,9 @@
 package view;
 
 import java.awt.Color;
+import java.util.Vector;
 import javax.swing.JOptionPane;
+import model.dao.PartidaDAO;
 import view.adm.AlterarAdm;
 import view.adm.AlterarPartida;
 import view.adm.AlterarTime;
@@ -34,7 +36,12 @@ public class Principal extends javax.swing.JFrame {
     }
     
  
-    
+    public void comboPartida(){
+        Vector vectorPartida = PartidaDAO.partidasCombo();
+        for (int i=0; i<vectorPartida.size();i++){
+            comboPartidaA.addItem(vectorPartida.elementAt(i).toString());
+        }
+    }
     public void meuInitUser(int tipo_user){
         // PRINCIPAL VISTO PELO USUÁRIO COMUM
         if(tipo_user == 0){
@@ -51,12 +58,14 @@ public class Principal extends javax.swing.JFrame {
     
     public void meuInitUser(){
         setInvisivel(true);
+        comboPartida();
     }
     
     public Principal(int tipo_user) {
         initComponents();
         panelPrincipal.setBackground(Color.WHITE);
         meuInitUser(tipo_user);
+        comboPartida();
         
     }
     
@@ -75,14 +84,12 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         panelPrincipal = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        cbTime1 = new javax.swing.JCheckBox();
+        cbTime2 = new javax.swing.JCheckBox();
         jLabel6 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        btnApostar = new javax.swing.JButton();
+        comboPartidaA = new javax.swing.JComboBox<>();
         panelPrincipalAdm = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -107,24 +114,48 @@ public class Principal extends javax.swing.JFrame {
 
         panelPrincipal.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel4.setText("jLabel4");
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jCheckBox1.setText("jCheckBox1");
+        cbTime1.setText("jCheckBox1");
 
-        jCheckBox2.setText("jCheckBox2");
+        cbTime2.setText("jCheckBox2");
 
-        jLabel2.setText("jLabel2");
-
-        jLabel3.setText("jLabel3");
-
-        jLabel5.setText("jLabel5");
-
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel6.setText("VS");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(103, Short.MAX_VALUE)
+                .addComponent(cbTime1)
+                .addGap(111, 111, 111)
+                .addComponent(jLabel6)
+                .addGap(115, 115, 115)
+                .addComponent(cbTime2)
+                .addGap(91, 91, 91))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cbTime1)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cbTime2)
+                            .addComponent(jLabel6))))
+                .addContainerGap(35, Short.MAX_VALUE))
+        );
+
+        btnApostar.setText("Apostar");
+
+        comboPartidaA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione a partida" }));
+        comboPartidaA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                comboPartidaAActionPerformed(evt);
             }
         });
 
@@ -132,54 +163,27 @@ public class Principal extends javax.swing.JFrame {
         panelPrincipal.setLayout(panelPrincipalLayout);
         panelPrincipalLayout.setHorizontalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrincipalLayout.createSequentialGroup()
-                .addContainerGap(115, Short.MAX_VALUE)
-                .addComponent(jCheckBox1)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel5)
-                .addGap(32, 32, 32)
-                .addComponent(jLabel6)
-                .addGap(45, 45, 45)
-                .addComponent(jLabel3)
-                .addGap(34, 34, 34)
-                .addComponent(jCheckBox2)
-                .addGap(110, 110, 110))
-            .addGroup(panelPrincipalLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelPrincipalLayout.createSequentialGroup()
-                        .addGap(262, 262, 262)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelPrincipalLayout.createSequentialGroup()
-                        .addGap(270, 270, 270)
-                        .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel2))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrincipalLayout.createSequentialGroup()
+                        .addComponent(comboPartidaA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(234, 234, 234))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrincipalLayout.createSequentialGroup()
+                        .addComponent(btnApostar)
+                        .addGap(258, 258, 258))))
         );
         panelPrincipalLayout.setVerticalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelPrincipalLayout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addComponent(jLabel2)
-                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelPrincipalLayout.createSequentialGroup()
-                        .addGap(7, 7, 7)
-                        .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jCheckBox2)
-                            .addComponent(jLabel3)))
-                    .addGroup(panelPrincipalLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel6))
-                    .addGroup(panelPrincipalLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jCheckBox1)
-                            .addComponent(jLabel5))))
-                .addGap(36, 36, 36)
-                .addComponent(jLabel4)
-                .addContainerGap(415, Short.MAX_VALUE))
+                .addGap(114, 114, 114)
+                .addComponent(comboPartidaA, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(btnApostar)
+                .addContainerGap(334, Short.MAX_VALUE))
         );
 
         panelPrincipalAdm.setBackground(new java.awt.Color(255, 255, 255));
@@ -330,9 +334,9 @@ public class Principal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void comboPartidaAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboPartidaAActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_comboPartidaAActionPerformed
 
     private void meuOpcoesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_meuOpcoesMouseClicked
 
@@ -343,9 +347,7 @@ public class Principal extends javax.swing.JFrame {
         panelPrincipalAdm.setVisible(false);
        if(alterarTime != null){
            alterarTime.setVisible(false);
-       }else if(alterarAdm != null){
-            alterarAdm.setVisible(false);
-        }
+       }
       
         if(alterarPartida == null){
             alterarPartida = new AlterarPartida(this);
@@ -370,8 +372,6 @@ public class Principal extends javax.swing.JFrame {
          
         if(alterarPartida != null){
             alterarPartida.setVisible(false);
-        }else if(alterarAdm != null){
-            alterarAdm.setVisible(false);
         }
         
         if(alterarTime == null){
@@ -392,7 +392,7 @@ public class Principal extends javax.swing.JFrame {
     private void criarADMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_criarADMActionPerformed
         // TODO add your handling code here:
         //setInvisivel(true);
-        panelPrincipalAdm.setVisible(false);
+       /* panelPrincipalAdm.setVisible(false);
         
         if(alterarTime != null){
            alterarTime.setVisible(false);
@@ -402,7 +402,10 @@ public class Principal extends javax.swing.JFrame {
         if(alterarAdm ==null){
             alterarAdm = new AlterarAdm(this);
             this.add(alterarAdm);
-        }alterarAdm.setVisible(true);
+        }alterarAdm.setVisible(true);*/
+       
+       new AlterarAdm(this).setVisible(true);
+       
     }//GEN-LAST:event_criarADMActionPerformed
 
     /**
@@ -441,27 +444,25 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnApostar;
+    private javax.swing.JCheckBox cbTime1;
+    private javax.swing.JCheckBox cbTime2;
+    private javax.swing.JComboBox<String> comboPartidaA;
     private javax.swing.JMenuItem criarADM;
     private javax.swing.JMenuItem iMenuAlterarP;
     private javax.swing.JMenuItem iMenuAlterarT;
     private javax.swing.JMenuItem iMenuSair;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JMenu menuPartida;

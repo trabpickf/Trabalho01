@@ -309,6 +309,10 @@ public class Login extends javax.swing.JFrame {
         
         
        UsuarioDAO uDao = new UsuarioDAO();
+       
+       boolean chq = uDao.checkLogin( txtUser.getText(), txtPass.getText());
+       System.out.println(chq);
+        
        if(uDao.checkLogin( txtUser.getText(), txtPass.getText())){
            if(uDao.isAdm(txtUser.getText()) == 0){  // 0 = Não, 1 = Sim
             new Principal(0).setVisible(true);

@@ -16,6 +16,23 @@ public class Usuario {
     private String email;
     private String palavraChave;
     private int tipo = 0;
+    private String codAdm;
+
+    public String getCodAdm() {
+        return codAdm;
+    }
+
+    public void setCodAdm(String codAdm) {
+        this.codAdm = codAdm;
+    }
+
+    public int getPontos() {
+        return pontos;
+    }
+
+    public void setPontos(int pontos) {
+        this.pontos = pontos;
+    }
     
     public Usuario(String nome,String user_name,String email, String palavraChave,String senha){
         this.nome = nome;
