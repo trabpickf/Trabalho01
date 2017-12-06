@@ -1,6 +1,8 @@
 package view;
 
 import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ItemListener;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import model.dao.PartidaDAO;
@@ -35,6 +37,18 @@ public class Principal extends javax.swing.JFrame {
         }
     }
     
+    public void comboEscolha(){
+       
+        String comboEsc = comboPartidaA.getSelectedItem().toString();
+        for(int i=0; i<comboEsc.length();i++){
+        System.out.println(comboEsc.charAt(i));
+        
+        
+        
+        
+           
+        }
+    }
  
     public void comboPartida(){
         Vector vectorPartida = PartidaDAO.partidasCombo();
@@ -53,12 +67,17 @@ public class Principal extends javax.swing.JFrame {
             this.getContentPane().setBackground(Color.WHITE);
         }
         
+       
+        
         
     }
     
     public void meuInitUser(){
         setInvisivel(true);
         comboPartida();
+        painelAposta.setVisible(false);
+        comboEscolha();
+        
     }
     
     public Principal(int tipo_user) {
@@ -66,6 +85,8 @@ public class Principal extends javax.swing.JFrame {
         panelPrincipal.setBackground(Color.WHITE);
         meuInitUser(tipo_user);
         comboPartida();
+        painelAposta.setVisible(false);
+        comboEscolha();
         
     }
     
@@ -84,7 +105,7 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         panelPrincipal = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        painelAposta = new javax.swing.JPanel();
         cbTime1 = new javax.swing.JCheckBox();
         cbTime2 = new javax.swing.JCheckBox();
         jLabel6 = new javax.swing.JLabel();
@@ -114,7 +135,7 @@ public class Principal extends javax.swing.JFrame {
 
         panelPrincipal.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        painelAposta.setBackground(new java.awt.Color(255, 255, 255));
 
         cbTime1.setText("jCheckBox1");
 
@@ -123,11 +144,11 @@ public class Principal extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel6.setText("VS");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout painelApostaLayout = new javax.swing.GroupLayout(painelAposta);
+        painelAposta.setLayout(painelApostaLayout);
+        painelApostaLayout.setHorizontalGroup(
+            painelApostaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelApostaLayout.createSequentialGroup()
                 .addContainerGap(103, Short.MAX_VALUE)
                 .addComponent(cbTime1)
                 .addGap(111, 111, 111)
@@ -136,15 +157,15 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(cbTime2)
                 .addGap(91, 91, 91))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        painelApostaLayout.setVerticalGroup(
+            painelApostaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelApostaLayout.createSequentialGroup()
                 .addGap(33, 33, 33)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(painelApostaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cbTime1)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGroup(painelApostaLayout.createSequentialGroup()
                         .addGap(1, 1, 1)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(painelApostaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(cbTime2)
                             .addComponent(jLabel6))))
                 .addContainerGap(35, Short.MAX_VALUE))
@@ -153,6 +174,11 @@ public class Principal extends javax.swing.JFrame {
         btnApostar.setText("Apostar");
 
         comboPartidaA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione a partida" }));
+        comboPartidaA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                comboPartidaAMouseClicked(evt);
+            }
+        });
         comboPartidaA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboPartidaAActionPerformed(evt);
@@ -163,7 +189,7 @@ public class Principal extends javax.swing.JFrame {
         panelPrincipal.setLayout(panelPrincipalLayout);
         panelPrincipalLayout.setHorizontalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(painelAposta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrincipalLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -180,7 +206,7 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(114, 114, 114)
                 .addComponent(comboPartidaA, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(painelAposta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
                 .addComponent(btnApostar)
                 .addContainerGap(334, Short.MAX_VALUE))
@@ -335,7 +361,7 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void comboPartidaAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboPartidaAActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_comboPartidaAActionPerformed
 
     private void meuOpcoesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_meuOpcoesMouseClicked
@@ -408,6 +434,11 @@ public class Principal extends javax.swing.JFrame {
        
     }//GEN-LAST:event_criarADMActionPerformed
 
+    private void comboPartidaAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comboPartidaAMouseClicked
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_comboPartidaAMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -462,12 +493,12 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JMenu menuPartida;
     private javax.swing.JMenu menuTime;
     private javax.swing.JMenu meuOpcoes;
+    private javax.swing.JPanel painelAposta;
     private javax.swing.JPanel panelPrincipal;
     private javax.swing.JPanel panelPrincipalAdm;
     // End of variables declaration//GEN-END:variables

@@ -170,5 +170,5 @@ select * from campeonatos;
 select * from partida;
 
 SELECT TIME.nome FROM PARTIDA INNER JOIN TIME ON PARTIDA.FK_TIME_id_time = id_time AND PARTIDA.FK_TIME_id_time2 = id_time;
-
 SELECT TIME.nome as time1, (select nome as t2 from time inner join partida on partida.FK_TIME_id_time2 = id_time) as time2 FROM PARTIDA INNER JOIN TIME ON PARTIDA.FK_TIME_id_time = id_time;
+select time.nome as 'Time Desafiante',time2.nome as 'Time Desafiado' from time inner join partida on(time.id_time = partida.FK_TIME_id_time) inner join time time2 on(time2.id_time = partida.FK_TIME_id_time2);

@@ -6,6 +6,14 @@
 package view.adm;
 
 import java.awt.Color;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.Vector;
+import javax.swing.JOptionPane;
+import model.bean.Partida;
+import model.dao.PartidaDAO;
+import model.dao.TimeDAO;
 import view.Principal;
 
 /**
@@ -31,6 +39,17 @@ public class AlterarPartida extends javax.swing.JInternalFrame {
     public void meuInit(){
        this.getContentPane().setBackground(Color.WHITE);
        this.getComponent(1).setVisible(false);
+       
+       /// COMBO LISTA
+       TimeDAO tDao = new TimeDAO();
+        Vector time1Vector = tDao.vectorTime();
+        
+        for (int i=0;i<time1Vector.size();i++){
+            comboTime1.addItem(time1Vector.elementAt(i).toString());
+            comboTime2.addItem(time1Vector.elementAt(i).toString());
+        }
+        
+ 
     }
 
     /**
@@ -76,7 +95,7 @@ public class AlterarPartida extends javax.swing.JInternalFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        comboTime1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um time 1" }));
+        comboTime1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione o time 1" }));
         comboTime1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboTime1ActionPerformed(evt);
@@ -95,6 +114,16 @@ public class AlterarPartida extends javax.swing.JInternalFrame {
         jPanel1.add(comboTime2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, 150, 25));
 
         btnAddPartida.setText("Confirmar");
+        btnAddPartida.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAddPartidaMouseClicked(evt);
+            }
+        });
+        btnAddPartida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddPartidaActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnAddPartida, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 80, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -323,6 +352,29 @@ public class AlterarPartida extends javax.swing.JInternalFrame {
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void btnAddPartidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddPartidaMouseClicked
+        String cbTime1 = comboTime1.getSelectedItem().toString();
+        String cbTime2 = comboTime2.getSelectedItem().toString();
+        System.out.println(cbTime1);
+        Date data = new Date();
+        String dataJ = data.getYear() + "-" + data.getMonth() + "-" + data.getDay();
+        
+        int idTime1 = PartidaDAO.nomeToId(cbTime1);
+        int idTime2 = PartidaDAO.nomeToId(cbTime2);
+        
+       
+        if(idTime1 != idTime2){
+            PartidaDAO.adicionar(idTime1, idTime2, dataJ);
+        }else{
+            JOptionPane.showMessageDialog(null,"Os times precisar ser diferentes");
+        }
+        
+    }//GEN-LAST:event_btnAddPartidaMouseClicked
+
+    private void btnAddPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddPartidaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAddPartidaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -23,7 +23,7 @@ import model.bean.Time;
 public class PartidaDAO {
     
     
-    public static void adicionar(int pTime1,int pTime2,String ganhador, String data){
+    public static void adicionar(int pTime1,int pTime2, String data){
         //Antes é passado pelo CheckTimeExiste
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
@@ -31,11 +31,10 @@ public class PartidaDAO {
         
         
         try {
-            stmt = con.prepareStatement("INSERT INTO partida (pTime1, pTime2, ganhador, data) VALUES (?,?,?,?)");
+            stmt = con.prepareStatement("INSERT INTO partida (FK_TIME_id_time, FK_TIME_id_time2, data) VALUES (?,?,?)");
             stmt.setInt(1,pTime1);
             stmt.setInt(2, pTime2);
-            stmt.setString(2, ganhador);
-            stmt.setString(2, data);
+            stmt.setString(3, data);
             stmt.executeUpdate();
             
             JOptionPane.showMessageDialog(null,"Time adicionado com sucesso!");
@@ -75,28 +74,55 @@ public class PartidaDAO {
     }
     
         public static Vector partidasCombo(){
+            Connection con = ConnectionFactory.getConnection();
+            PreparedStatement stmt = null;
+            ResultSet rs = null;
+            Vector vectorTime = new Vector();
+
+            try {
+                stmt = con.prepareStatement("select time.nome as 'time1',time2.nome as 'time2' from time inner join partida on(time.id_time = partida.FK_TIME_id_time) inner join time time2 on(time2.id_time = partida.FK_TIME_id_time2);");
+                rs = stmt.executeQuery();
+
+                while(rs.next()){
+                    vectorTime.add(rs.getString("time1") + " vs " + rs.getString("time2"));
+
+                }
+
+
+
+                } catch (SQLException ex) {
+                    JOptionPane.showMessageDialog(null,"Erro ao procurar partida: " +ex);
+            }finally{
+                ConnectionFactory.closeConnection(con, stmt, rs);
+            }
+
+            return vectorTime;
+    }
+        
+    public static int nomeToId(String nomeT){
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         ResultSet rs = null;
-        Vector vectorTime = new Vector();
+        int idTime = -1;
         
-        try {
-            stmt = con.prepareStatement("SELECT TIME.nome as time1, (select nome as t2 from time inner join partida on partida.FK_TIME_id_time2 = id_time) as time2 FROM PARTIDA INNER JOIN TIME ON PARTIDA.FK_TIME_id_time = id_time");
-            rs = stmt.executeQuery();
-            
-            while(rs.next()){
-                vectorTime.add(rs.getString("time1"));
-                vectorTime.add(rs.getString("time2"));
+            try {
+                stmt = con.prepareStatement("SELECT id_time FROM TIME WHERE TIME.nome = ?");
+                stmt.setString(1, nomeT);
+                rs = stmt.executeQuery();
+                
+                while(rs.next()){
+                    idTime = rs.getInt("id_time");
+
+                }
+
+
+
+                } catch (SQLException ex) {
+                    JOptionPane.showMessageDialog(null,"Erro ao procurar partida: " +ex);
+            }finally{
+                ConnectionFactory.closeConnection(con, stmt, rs);
             }
-            
-            
-            
-            } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null,"Erro ao procurar partida: " +ex);
-        }finally{
-            ConnectionFactory.closeConnection(con, stmt, rs);
-        }
-        
-        return vectorTime;
+
+            return idTime;
     }
 }
