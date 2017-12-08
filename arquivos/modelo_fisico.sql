@@ -1,6 +1,6 @@
-/*drop database if exists pickfantasyDB;*/
-create database pickfantasyDB;
-use pickfantasyDB;
+/*drop database if exists pickfantasy;*/
+create database pickfantasy;
+use pickfantasy;
 
 
 CREATE TABLE USUARIO (
