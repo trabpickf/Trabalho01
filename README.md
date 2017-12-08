@@ -63,99 +63,98 @@ E por fim, a última tela da página inicial é a de partidas, onde o usuário e
 ![Clique aqui! - ](https://github.com/trabpickf/Trabalho01/blob/master/arquivos/tabelas_consultas.sql "Script") Para acessar o script dos comandos abaixo.<br>
 
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
-SELECT * FROM usuario;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/tabela%20usuario.PNG" /><br><br>
-SELECT * FROM partida;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/tabela%20partida.PNG" /><br><br>
-SELECT * FROM campeonatos;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/tabela%20campeonato.PNG" /><br><br>
-SELECT * FROM time;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/tabela%20time.PNG" /><br><br>
-SELECT * FROM etapa;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/tabela%20etapa.PNG" /><br><br>
-SELECT * FROM jogador;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/tabela%20jogador.PNG" /><br><br>
-SELECT * FROM ranking_temporada;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/tabela%20ranking_temporada.PNG" /><br><br>
-SELECT * FROM ESCOLHE_E_C_ESCOLHE_USUARIO_TIME_JOGADOR;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/tabela%20escolha_usuario_time_jogador.PNG" /><br><br>
-SELECT * FROM aposta_usuario_partida_time;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/tabela%20usuario_partida.PNG" /><br><br>
-SELECT * FROM alcancou;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/tabela%20alcançou.PNG" /><br>
+**SELECT * FROM usuario;**<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/tabela%20usuario.PNG" /><br><br>
+**SELECT * FROM partida;**<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/tabela%20partida.PNG" /><br><br>
+**SELECT * FROM campeonatos;**<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/tabela%20campeonato.PNG" /><br><br>
+**SELECT * FROM time;**<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/tabela%20time.PNG" /><br><br>
+**SELECT * FROM etapa;**<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/tabela%20etapa.PNG" /><br><br>
+S**ELECT * FROM jogador;**<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/tabela%20jogador.PNG" /><br><br>
+**SELECT * FROM ranking_temporada;**<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/tabela%20ranking_temporada.PNG" /><br><br>
+**SELECT * FROM ESCOLHE_E_C_ESCOLHE_USUARIO_TIME_JOGADOR;**<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/tabela%20escolha_usuario_time_jogador.PNG" /><br><br>
+**SELECT * FROM aposta_usuario_partida_time;**<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/tabela%20usuario_partida.PNG" /><br><br>
+**SELECT * FROM alcancou;**<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/tabela%20alcançou.PNG" /><br>
 
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 3) <br>
-SELECT user_name AS Nome, pontos FROM usuario WHERE pontos>100;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/where%201.PNG" /><br><br>
-SELECT user_name AS Nome, pontos FROM usuario WHERE pontos >100 AND pontos <300;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/where%202.PNG" /><br><br>
-SELECT nome AS Nome, nacionalidade FROM jogador WHERE nacionalidade = "Brasileira";<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/where%203.PNG" /><br>
+**SELECT user_name AS Nome, pontos FROM usuario WHERE pontos>100;**<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/where%201.PNG" /><br><br>
+**SELECT user_name AS Nome, pontos FROM usuario WHERE pontos >100 AND pontos <300;**<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/where%202.PNG" /><br><br>
+**SELECT nome AS Nome, nacionalidade FROM jogador WHERE nacionalidade = "Brasileira";**<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/where%203.PNG" /><br>
 
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E CAMPOS RENOMEADOS (Mínimo 2)<br>
-SELECT count(user_id) AS Quantidade_De_Jogadores FROM usuario;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.3%201.PNG" /><br><br>
-SELECT nome, pontos FROM usuario WHERE pontos/2 > 100;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.3%202.PNG" /><br>
+**SELECT count(user_id) AS Quantidade_De_Jogadores FROM usuario;**<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.3%201.PNG" /><br><br>
+**SELECT nome, pontos FROM usuario WHERE pontos/2 > 100;**<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.3%202.PNG" /><br>
 
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE (Mínimo 3)  <br>
-SELECT nome FROM jogador WHERE nome LIKE "m%";<br>
+**SELECT nome FROM jogador WHERE nome LIKE "m%";**<br>
 <img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.4%201.PNG" /><br><br>
-SELECT nome FROM jogador WHERE nome LIKE "F_lipe %";<br>
+**SELECT nome FROM jogador WHERE nome LIKE "F_lipe %";**<br>
 <img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.4%202.PNG" /><br><br>
-SELECT nome FROM time WHERE nome LIKE "K%";<br>
+**SELECT nome FROM time WHERE nome LIKE "K%";**<br>
 <img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.4%203.PNG" /><br>
 
 #### 9.5	ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
-UPDATE time SET nacionalidade='Brasileira'	WHERE id_time = 5;<br>
-select * from time;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/update%201.1.PNG" /> <img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/update%201.2.PNG" /><br><br>
-UPDATE partida SET placar = '2x0' WHERE id_partida = 2;<br>
-select * from partida;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/update%202.1.PNG" /> <img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/update%202.2.PNG" /><br><br>
-UPDATE usuario SET pontos = 0 WHERE user_id < 2;<br>
-select * from usuario;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/update%203.1.PNG" /> <img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/update%203.2.PNG" /><br><br>
+**UPDATE time SET nacionalidade='Brasileira'	WHERE id_time = 5;**<br>
+**select * from time;**<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/update%201.1.PNG" /> <img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/update%201.2.PNG" /><br><br>
+**UPDATE partida SET placar = '2x0' WHERE id_partida = 2;**<br>
+**select * from partida;**<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/update%202.1.PNG" /> <img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/update%202.2.PNG" /><br><br>
+**UPDATE usuario SET pontos = 0 WHERE user_id < 2;**<br>
+**select * from usuario;**<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/update%203.1.PNG" /> <img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/update%203.2.PNG" /><br><br>
 
-delete from APOSTA_USUARIO_PARTIDA_TIME WHERE FK_USUARIO_user_id = 2;<br>
-select * from APOSTA_USUARIO_PARTIDA_TIME;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/delete%201.1.PNG" /> <img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/delete%201.2.PNG" /><br><br>
-delete from ranking_temporada WHERE id_temporada < 2;<br>
-select * from ranking_temporada;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/delete%202.1.PNG" /> <img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/delete%202.2.PNG" /><br><br>
-delete from alcancou WHERE FK_USUARIO_user_id = 2;
-select * from alcancou;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/delete%203.1.PNG" /> <img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/delete%203.2.PNG" /><br>
+**delete from APOSTA_USUARIO_PARTIDA_TIME WHERE FK_USUARIO_user_id = 2;**<br>
+**select * from APOSTA_USUARIO_PARTIDA_TIME;**<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/delete%201.1.PNG" /> <img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/delete%201.2.PNG" /><br><br>
+**delete from ranking_temporada WHERE id_temporada < 2;**<br>
+**select * from ranking_temporada;**<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/delete%202.1.PNG" /> <img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/delete%202.2.PNG" /><br><br>
+**delete from alcancou WHERE FK_USUARIO_user_id = 2;**
+**select * from alcancou;**<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/delete%203.1.PNG" /> <img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/delete%203.2.PNG" /><br>
 
 
 #### 9.6	CONSULTAS COM JUNÇÃO (Todas Junções)<br>
-SELECT * FROM partida INNER JOIN time
-ON partida.FK_TIME_id_time= time.id_time;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.6%201.PNG" /><br><br>
-SELECT * FROM aposta_usuario_partida_time INNER JOIN usuario
-ON FK_USUARIO_user_id = user_id ORDER BY user_name;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.6%202.PNG" /><br><br>
-SELECT * FROM jogador INNER JOIN time ON 
-pickfantasy.time.id_time = pickfantasy.jogador.FK_TIME_id_time;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.6%203.PNG" /><br>
+**SELECT * FROM partida INNER JOIN time
+ON partida.FK_TIME_id_time= time.id_time;**<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.6%201.PNG" /><br><br>
+**SELECT * FROM aposta_usuario_partida_time INNER JOIN usuario
+ON FK_USUARIO_user_id = user_id ORDER BY user_name;**<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.6%202.PNG" /><br><br>
+**SELECT * FROM jogador INNER JOIN time ON 
+pickfantasy.time.id_time = pickfantasy.jogador.FK_TIME_id_time;**<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.6%203.PNG" /><br>
 
 #### 9.7	CONSULTAS COM GROUP BY (Mínimo 5)<br>
-SELECT * FROM etapa GROUP BY etapa.nome;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.7%201.PNG" /><br><br>
-SELECT * FROM etapa GROUP BY etapa.id_etapa DESC;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.7%202.PNG" /><br><br>
-SELECT * FROM aposta_usuario_partida_time GROUP BY aposta_usuario_partida_time.FK_PARTIDA_id_partida;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.7%203.PNG" /><br><br>
-select * from usuario group by nome;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.7%204.PNG" /><br><br>
-select * from time group by nacionalidade;<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.7%205.PNG" /><br>
+**SELECT * FROM etapa GROUP BY etapa.nome;**<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.7%201.PNG" /><br><br>
+**SELECT * FROM etapa GROUP BY etapa.id_etapa DESC;**<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.7%202.PNG" /><br><br>
+**SELECT * FROM aposta_usuario_partida_time GROUP BY aposta_usuario_partida_time.FK_PARTIDA_id_partida;**<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.7%203.PNG" /><br><br>
+**select * from usuario group by nome;**<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.7%204.PNG" /><br><br>
+**select * from time group by nacionalidade;**<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.7%205.PNG" /><br>
 
 ### 9.8 CONSULTAS COM LEFT E RIGHT JOIN (Mínimo 4)<br>
-SELECT user_name, nome, user_id FROM pickfantasy.alcancou RIGHT OUTER JOIN usuario ON alcancou.FK_USUARIO_user_id = usuario.user_id;<br>
+**SELECT user_name, nome, user_id FROM pickfantasy.alcancou RIGHT OUTER JOIN usuario ON alcancou.FK_USUARIO_user_id = usuario.user_id;**<br>
 <img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.8%201.PNG" /><br><br>
-SELECT campeonatos.nome, id_campeonato FROM etapa_campeonato RIGHT OUTER JOIN campeonatos ON campeonatos.id_campeonato = etapa_campeonato.FK_CAMPEONATOS_id_campeonato;<br>
+**SELECT campeonatos.nome, id_campeonato FROM etapa_campeonato RIGHT OUTER JOIN campeonatos ON campeonatos.id_campeonato = etapa_campeonato.FK_CAMPEONATOS_id_campeonato;**<br>
 <img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.8%202.PNG" /><br><br>
-SELECT etapa.nome, id_etapa FROM etapa LEFT OUTER JOIN etapa_campeonato ON etapa_campeonato.FK_ETAPA_id_etapa = etapa.id_etapa;<br>
+**SELECT etapa.nome, id_etapa FROM etapa LEFT OUTER JOIN etapa_campeonato ON etapa_campeonato.FK_ETAPA_id_etapa = etapa.id_etapa;**<br>
 <img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.8%203.PNG" /><br><br>
-SELECT user_name,id_partida, placar, ganhador FROM aposta_usuario_partida_time LEFT OUTER JOIN partida ON
+**SELECT user_name,id_partida, placar, ganhador FROM aposta_usuario_partida_time LEFT OUTER JOIN partida ON
 partida.id_partida = aposta_usuario_partida_time.FK_PARTIDA_id_partida
-RIGHT OUTER JOIN usuario ON aposta_usuario_partida_time.FK_USUARIO_user_id = usuario.user_id;<br>
+RIGHT OUTER JOIN usuario ON aposta_usuario_partida_time.FK_USUARIO_user_id = usuario.user_id;**<br>
 <img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.8%204.PNG" /><br>
 
 ### 9.9 CONSULTAS COM SELF JOIN (todas) E VIEW (mais importantes)<br>
-select time.nome as 'Time Desafiante',time2.nome as 'Time Desafiado' from time inner join partida
-on(time.id_time = partida.FK_TIME_id_time) inner join time time2 on(time2.id_time = partida.FK_TIME_id_time2);<br>
+**select time.nome as 'Time Desafiante',time2.nome as 'Time Desafiado' from time inner join partida
+on(time.id_time = partida.FK_TIME_id_time) inner join time time2 on(time2.id_time = partida.FK_TIME_id_time2);**<br>
 <img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.9%201.PNG" /><br><br><br>
-create view ranking_usuarios as select user_name as usuario, pontos from usuario order by usuario.pontos desc;<br>
-select * from ranking_usuarios;<br>
+**create view ranking_usuarios as select user_name as usuario, pontos from usuario order by usuario.pontos desc;<br>
+select * from ranking_usuarios;**<br>
 <img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/view%20ranking_usuarios.PNG" /><br><br>
-create view jogadores_times as select jogador.apelido, time.nome from jogador inner join time on(jogador.FK_TIME_id_time = time.id_time);<br>
-select * from jogadores_times;<br>
+**create view jogadores_times as select jogador.apelido, time.nome from jogador inner join time on(jogador.FK_TIME_id_time = time.id_time);**<br>
+**select * from jogadores_times;**<br>
 <img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/view%20jogadores_times.PNG" /><br>
 
 
 ### 9.10 SUBCONSULTAS (Mínimo 3) <br>
-select * from jogador where nome in (SELECT nome FROM jogador WHERE nome LIKE "m%");<br>
+**select * from jogador where nome in (SELECT nome FROM jogador WHERE nome LIKE "m%");**<br>
 <img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.10%201.PNG" /><br><br>
-select * from time where nome in (SELECT nome FROM time WHERE nacionalidade <> 'Brasileira');<br>
+**select * from time where nome in (SELECT nome FROM time WHERE nacionalidade <> 'Brasileira');**<br>
 <img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.10%202.PNG" /><br><br>
-select * from usuario where nome in (SELECT nome FROM usuario WHERE pontos >= 300);<br>
+**select * from usuario where nome in (SELECT nome FROM usuario WHERE pontos >= 300);**<br>
 <img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.10%203.PNG" /><br>
 
-    Entrega 13/11
 
 ### 10	ATUALIZAÇÃO DA DOCUMENTAÇÃO DOS SLIDES<br>
 ### 11	DIFICULDADES ENCONTRADAS PELO GRUPO<br>
