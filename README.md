@@ -22,9 +22,9 @@ E por fim, a última tela da página inicial é a de partidas, onde o usuário e
 
 ### 4.RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
 
-<img src="https://raw.githubusercontent.com/trabpickf/Trabalho01/master/imagens/mockup.png"/>
+<img src="https://raw.githubusercontent.com/trabpickf/Trabalho01/master/imagens/mockup.png" alt="Mockup"/>
 
-![Clique aqui!](https://github.com/trabpickf/Trabalho01/tree/master/arquivos/PickEmFantasy.pdf?raw=true "Modelo completo") Para visualizar o modelo completo.
+![Clique aqui!](https://github.com/trabpickf/Trabalho01/tree/master/arquivos/PickEmFantasy.pdf?raw=true "Modelo completo" "Modelo Completo") Para visualizar o modelo completo.
 
 #### 4.1 TABELA DE DADOS DO SISTEMA:
    ![Clique aqui!](https://github.com/trabpickf/Trabalho01/tree/master/arquivos/tabela.ods?raw=true "Tabela CALC") Caso queira acessar a tabela.
@@ -115,7 +115,7 @@ ON partida.FK_TIME_id_time= time.id_time;**<br><img src="https://github.com/trab
 **SELECT * FROM aposta_usuario_partida_time INNER JOIN usuario
 ON FK_USUARIO_user_id = user_id ORDER BY user_name;**<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.6%202.PNG" /><br><br>
 **SELECT * FROM jogador INNER JOIN time ON 
-pickfantasy.time.id_time = pickfantasy.jogador.FK_TIME_id_time;**<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.6%203.PNG" /><br>
+pickfantasy.time.id_time = pickfantasy.jogador.FK_TIME_id_time;**<br><img src="https://raw.githubusercontent.com/trabpickf/Trabalho01/master/imagens/96-3.png alt="9.6 - 3" /><br>
 
 #### 9.7	CONSULTAS COM GROUP BY (Mínimo 5)<br>
 **SELECT * FROM etapa GROUP BY etapa.nome;**<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.7%201.PNG" /><br><br>
