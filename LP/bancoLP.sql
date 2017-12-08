@@ -8,9 +8,9 @@ CREATE TABLE USUARIO (
     nome varchar(100) not null,
     email varchar(50),
     senha varchar(50) not null,
-    pontos int (10) default 0,
+    acertoGlobal int (100) default 0,
+    acertoPartida int(10) default 0,
     tipo_user int(2) default 0,
-    codAdm int default null,
     palavra_chave varchar(20) not null
 );
 
@@ -18,7 +18,7 @@ CREATE TABLE PARTIDA (
     id_partida int PRIMARY KEY auto_increment,
     placar_time1 int (2) default 0,
     placar_time2 int(2) default 0,
-    ganhador varchar(20) default null,
+    ganhador varchar(20),
     data date,
     FK_CAMPEONATOS_id_campeonato int,
     FK_TIME_id_time2 int,
@@ -29,9 +29,6 @@ CREATE TABLE CAMPEONATOS (
     id_campeonato int PRIMARY KEY auto_increment,
     nome varchar(50)
 );
-
-
-
 
 CREATE TABLE TIME (
     id_time int PRIMARY KEY auto_increment,
@@ -152,23 +149,25 @@ ALTER TABLE ALCANCOU ADD CONSTRAINT FK_ALCANCOU_1
     REFERENCES RANKING_TEMPORADA (id_temporada);
     
 
-ALTER TABLE pickfantasy.time ADD COLUMN (
-Campeonato varchar (40)
-);
-INSERT INTO usuario( user_name, nome, email, senha, tipo_user,palavra_chave, codAdm)
-VALUES ('ez', 'Ezequiel','eze@aaa.com','1', 1, 'ola',1);
+INSERT INTO USUARIO( user_name, nome, email, senha, tipo_user,palavra_chave)
+VALUES ('ez', 'Ezequiel','eze@aaa.com','1', 1, 'ola');
 
-insert into campeonatos(nome) values ('CS');
-insert into time(nome, nacionalidade) values('Keyd', 'BR'), ('Pain','EUA');
+INSERT INTO USUARIO( user_name, nome, email, senha, tipo_user,palavra_chave,acertoGlobal)
+VALUES ('ezeq', 'Ezequiel','eze@sss.com','1', 1, 'ola', 15);
 
-insert into partida(data, FK_CAMPEONATOS_id_campeonato,FK_TIME_id_time2,FK_TIME_id_time)
-VALUES ('2010-10-11',1,1,2);
+select *, acertoGlobal*10 as PontosGlobais from USUARIO where USUARIO.user_name = 'ezeq';
 
-SELECT * FROM usuario LIMIT 100;
-select * from time;
-select * from campeonatos;
-select * from partida;
 
-SELECT TIME.nome FROM PARTIDA INNER JOIN TIME ON PARTIDA.FK_TIME_id_time = id_time AND PARTIDA.FK_TIME_id_time2 = id_time;
-SELECT TIME.nome as time1, (select nome as t2 from time inner join partida on partida.FK_TIME_id_time2 = id_time) as time2 FROM PARTIDA INNER JOIN TIME ON PARTIDA.FK_TIME_id_time = id_time;
-select time.nome as 'Time Desafiante',time2.nome as 'Time Desafiado' from time inner join partida on(time.id_time = partida.FK_TIME_id_time) inner join time time2 on(time2.id_time = partida.FK_TIME_id_time2);
+#SELECT * FROM ESCOLHE_E_C_ESCOLHE_USUARIO_TIME_JOGADOR;
+
+SELECT user_name AS Nome, pontos FROM usuario WHERE pontos>100;
+
+SELECT * FROM ALCANCOU;
+SELECT * FROM APOSTA_USUARIO_PARTIDA_TIME;
+SELECT * FROM RANKING_TEMPORADA;
+SELECT * FROM JOGADOR;
+SELECT * FROM USUARIO LIMIT 100;
+select * from TIME;
+select * from PARTIDA;
+SELECT * FROM CAMPEONATOS;
+SELECT * FROM ETAPA;
