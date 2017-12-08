@@ -115,14 +115,15 @@ ON partida.FK_TIME_id_time= time.id_time;**<br><img src="https://github.com/trab
 **SELECT * FROM aposta_usuario_partida_time INNER JOIN usuario
 ON FK_USUARIO_user_id = user_id ORDER BY user_name;**<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.6%202.PNG" /><br><br>
 **SELECT * FROM jogador INNER JOIN time ON 
-pickfantasy.time.id_time = pickfantasy.jogador.FK_TIME_id_time;**<br><img src="https://raw.githubusercontent.com/trabpickf/Trabalho01/master/imagens/96-3.png alt="9.6 - 3" /><br>
+pickfantasy.time.id_time = pickfantasy.jogador.FK_TIME_id_time;**<br><img src="https://raw.githubusercontent.com/trabpickf/Trabalho01/master/imagens/96-3.png /> <br>
 
 #### 9.7	CONSULTAS COM GROUP BY (Mínimo 5)<br>
 **SELECT * FROM etapa GROUP BY etapa.nome;**<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.7%201.PNG" /><br><br>
 **SELECT * FROM etapa GROUP BY etapa.id_etapa DESC;**<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.7%202.PNG" /><br><br>
 **SELECT * FROM aposta_usuario_partida_time GROUP BY aposta_usuario_partida_time.FK_PARTIDA_id_partida;**<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.7%203.PNG" /><br><br>
 **select * from usuario group by nome;**<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.7%204.PNG" /><br><br>
-**select * from time group by nacionalidade;**<br><img src="https://github.com/trabpickf/Trabalho01/blob/master/imagens/9.7%205.PNG" /><br>
+**select * from time group by nacionalidade;**<br>
+<img src="https://raw.githubusercontent.com/trabpickf/Trabalho01/master/imagens/96-3.png" /><br><br>
 
 ### 9.8 CONSULTAS COM LEFT E RIGHT JOIN (Mínimo 4)<br>
 **SELECT user_name, nome, user_id FROM pickfantasy.alcancou RIGHT OUTER JOIN usuario ON alcancou.FK_USUARIO_user_id = usuario.user_id;**<br>
