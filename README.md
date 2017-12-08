@@ -32,19 +32,19 @@ E por fim, a última tela da página inicial é a de partidas, onde o usuário e
 
 ### 5.MODELO CONCEITUAL<br>
 
-![Alt text](https://github.com/trabpickf/Trabalho01/blob/master/imagens/Modelo%20Conceitual%20-%20Final.png "Modelo Conceitual")
+![Alt text](https://github.com/trabpickf/Trabalho01/blob/master/arquivos/ModeloConceitual_2.png?raw=true "Modelo Conceitual")
 
 #### 5.1 DESCRIÇÃO DOS DADOS
    ![Clique aqui!](https://github.com/trabpickf/Trabalho01/blob/master/arquivos/descricao_dados.txt "Descrição dos dados") Para acessar a descrição dos dados.
 
 #### 5.2 DECISÕES DE PROJETO
-   a) Tabela Partida: Pensamos novamente na forma de guardar o placar da partida. A ideia anterior era salvar em um atributo varchar("3x2"). Contudo, para que as informações venham a ter boas práticas, utilizaremos de dois atributos int(placarTime1, placarTime2) para guardas as informações separadas.
-   b) Tabela Usuário: Não mais será guardado a pontuação direto em um atributo, como pensado no ínicio do projeto. Será guardado em atributos distintos a quantidade de 
+   **A)** Tabela Partida: Pensamos novamente na forma de guardar o placar da partida. A ideia anterior era salvar em um atributo varchar("3x2"). Contudo, para que as informações venham a ter boas práticas, utilizaremos de dois atributos int(placarTime1, placarTime2) para guardas as informações separadas.<br><br>
+   **B)** Tabela Usuário: Não mais será guardado a pontuação direto em um atributo, como pensado no ínicio do projeto. Será guardado em atributos distintos a quantidade de 
 acerto por partida(int acertoPartida) e a quantidade de acerto global(int acertoGlobal). A pontuação será mostrada, multiplicando a quantidade de cada atributo por 8(cada acerto equivale a 8 pontos).
 <hr>
 
 ### 6	MODELO LÓGICO<br>
-![Alt text](https://github.com/trabpickf/Trabalho01/blob/master/imagens/Modelo%20Logico%20-%20Final.png "Modelo Logico")
+![Alt text](https://github.com/trabpickf/Trabalho01/blob/master/arquivos/ModeloLogico.png?raw=true "Modelo Logico")
 ### 7	MODELO FÍSICO<br>    
 ![Clique aqui!](https://github.com/trabpickf/Trabalho01/tree/master/arquivos/modelo_fisico.sql "Modelo Físico") Para acessar o script do modelo físico.
 
